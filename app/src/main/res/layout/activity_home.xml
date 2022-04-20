@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:layout_marginStart="55dp"
+            android:src="@drawable/racchetta_padel"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="-80dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/federer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/followersButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginTop="30dp"
+            android:text="650"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Robberto F."
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <Button
+            android:id="@+id/sportsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@+id/followersButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <Button
+            android:id="@+id/followingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="193"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/followersButton"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/sportsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Sports"
+            app:layout_constraintEnd_toEndOf="@+id/sportsButton"
+            app:layout_constraintStart_toStartOf="@+id/sportsButton"
+            app:layout_constraintTop_toBottomOf="@+id/sportsButton" />
+
+        <TextView
+            android:id="@+id/followersTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Followers"
+            app:layout_constraintEnd_toEndOf="@+id/followersButton"
+            app:layout_constraintStart_toStartOf="@+id/followersButton"
+            app:layout_constraintTop_toBottomOf="@+id/followersButton" />
+
+        <TextView
+            android:id="@+id/followingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Following"
+            app:layout_constraintEnd_toEndOf="@+id/followingButton"
+            app:layout_constraintStart_toStartOf="@+id/followingButton"
+            app:layout_constraintTop_toBottomOf="@+id/followingButton" />
+
+        <Button
+            android:id="@+id/ediProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Edit profile"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/followersTextView" />
+
+        <ImageView
+            android:id="@+id/tracciatoImageView"
+            android:layout_width="700dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/tracciato"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="189dp" />
+
+        <TextView
+            android:id="@+id/titleSports"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Sports"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ediProfileButton" />
+
+        <ImageView
+            android:id="@+id/football"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/football"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleSports" />
+
+        <ImageView
+            android:id="@+id/tennis"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/tennis"
+            app:layout_constraintStart_toEndOf="@+id/football"
+            app:layout_constraintTop_toBottomOf="@+id/titleSports" />
+
+        <ImageView
+            android:id="@+id/beachvolley"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/beachvolley"
+            app:layout_constraintStart_toEndOf="@+id/tennis"
+            app:layout_constraintTop_toBottomOf="@+id/titleSports" />
+
+        <ImageView
+            android:id="@+id/basketball"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/basketball"
+            app:layout_constraintStart_toEndOf="@+id/beachvolley"
+            app:layout_constraintTop_toBottomOf="@+id/titleSports" />
+
+
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
