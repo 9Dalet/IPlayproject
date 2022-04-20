@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <ImageView
             android:layout_width="wrap_content"
@@ -172,7 +169,4 @@
             android:src="@drawable/basketball"
             app:layout_constraintStart_toEndOf="@+id/beachvolley"
             app:layout_constraintTop_toBottomOf="@+id/titleSports" />
-
-
-    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
