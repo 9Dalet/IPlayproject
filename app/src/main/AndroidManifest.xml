@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IPlay">
         <activity
+            android:name=".navbar.NavBarActivity"
+            android:exported="false" />
+        <activity
             android:name=".chat.prova"
             android:exported="false"
             android:label="@string/title_activity_prova"
