@@ -7,6 +7,9 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
 import com.example.iplay.R
+import com.example.iplay.chat.ChatActivity
+import com.example.iplay.create.CreateActivity
+import com.example.iplay.home.HomeActivity
 
 class NavBarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,8 +23,23 @@ class NavBarActivity : AppCompatActivity() {
 
 
         navHomeButton.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW)
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
+
+        navChatButton.setOnClickListener {
+            val intent = Intent(this, ChatActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+        navAddButton.setOnClickListener {
+            val intent = Intent(this, CreateActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
     }
 
 //functions for every state of the app while being used
