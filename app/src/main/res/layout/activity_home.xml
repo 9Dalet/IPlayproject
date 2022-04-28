@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".home.HomeActivity">
 
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="300dp"
-            android:layout_marginStart="55dp"
-            android:src="@drawable/racchetta_padel"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="-80dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <ImageView
             android:id="@+id/imageView"
@@ -99,24 +94,14 @@
 
         <Button
             android:id="@+id/ediProfileButton"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:text="Edit profile"
-            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/followersTextView" />
-
-        <ImageView
-            android:id="@+id/tracciatoImageView"
-            android:layout_width="700dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/tracciato"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.615"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="189dp" />
 
         <TextView
             android:id="@+id/titleSports"
@@ -124,8 +109,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:text="Sport"
-            android:textStyle="bold"
             android:textSize="30dp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ediProfileButton" />
@@ -169,4 +154,19 @@
             android:src="@drawable/basketball"
             app:layout_constraintStart_toEndOf="@+id/beachvolley"
             app:layout_constraintTop_toBottomOf="@+id/titleSports" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/titleTeam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Team"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tennis" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
