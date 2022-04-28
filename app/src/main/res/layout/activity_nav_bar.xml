@@ -15,10 +15,46 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-
-
-
         />
 
+    <ImageButton
+        android:id="@+id/navHomeButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="36dp"
+        android:backgroundTint="#03FFFFFF"
+        android:src="@drawable/ic_baseline_home_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/navSearchButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:backgroundTint="#03FFFFFF"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/navHomeButton" />
+
+    <ImageButton
+        android:id="@+id/navChatButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="30dp"
+        android:backgroundTint="#03FFFFFF"
+        android:src="@drawable/ic_baseline_chat_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/navAddButton" />
+
+    <ImageButton
+        android:id="@+id/navAddButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="#03FFFFFF"
+        android:src="@drawable/ic_baseline_add_circle_outline_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
