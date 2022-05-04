@@ -10,6 +10,7 @@
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/iplay-simone/IPlay/app/src/main/res/layout/activity_nav_bar.xml" value="0.1526268115942029" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/iplay-simone/IPlay/app/src/main/res/layout/content_prova.xml" value="0.21784420289855072" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/iplay-simone/IPlay/app/src/main/res/layout/fragment_home.xml" value="0.21784420289855072" />
+        <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/drawable/ic_baseline_arrow_back_ios_new_24.xml" value="0.1375" />
         <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/activity_chat.xml" value="0.25" />
         <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/activity_create.xml" value="0.2" />
         <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/activity_home.xml" value="0.152" />
@@ -18,7 +19,8 @@
         <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/activity_nav_bar.xml" value="0.25" />
         <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/fragment_create.xml" value="0.25" />
         <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/layout/fragment_search.xml" value="0.264" />
+        <entry key="..\:/Users/Admin/Desktop/ITS/Android/IPlayproject/app/src/main/res/menu/bottom_navbar.xml" value="0.25" />
       </map>
     </option>
   </component>
