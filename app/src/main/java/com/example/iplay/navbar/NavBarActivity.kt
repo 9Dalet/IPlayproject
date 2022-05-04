@@ -26,23 +26,23 @@ class NavBarActivity : AppCompatActivity() {
     }
 
 //functions for every state of the app while being used
-    override fun onStart() {
-        super.onStart()
-        Log.d("activitystatus", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d("activitystatus", "onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d("activitystatus", "onPause")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("activitystatus", "onDestroy")
-    }
+//    override fun onStart() {
+//        super.onStart()
+//        Log.d("activitystatus", "onStart")
+//    }
+//
+//    override fun onResume() {
+//        super.onResume()
+//        Log.d("activitystatus", "onResume")
+//    }
+//
+//    override fun onPause() {
+//        super.onPause()
+//        Log.d("activitystatus", "onPause")
+//    }
+//
+//    override fun onDestroy() {
+//        super.onDestroy()
+//        Log.d("activitystatus", "onDestroy")
+//    }
 }

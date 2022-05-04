@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/accediButton"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="80dp"
@@ -29,6 +29,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <Button
+        android:id="@+id/regButton"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:layout_marginTop="50dp"
@@ -37,7 +38,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/accediButton" />
 
     <TextView
         android:id="@+id/textView"
