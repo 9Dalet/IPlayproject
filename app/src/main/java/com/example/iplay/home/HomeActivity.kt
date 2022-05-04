@@ -1,7 +1,8 @@
-package com.example.iplay
+package com.example.iplay.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.iplay.R
 
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
