@@ -23,7 +23,10 @@ class NavBarActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         val navController = findNavController(R.id.nav_fragment)
         bottomNavigationView.setupWithNavController(navController)
+
+
     }
+}
 
 //functions for every state of the app while being used
 //    override fun onStart() {
@@ -45,4 +48,3 @@ class NavBarActivity : AppCompatActivity() {
 //        super.onDestroy()
 //        Log.d("activitystatus", "onDestroy")
 //    }
-}
