@@ -16,29 +16,6 @@ class NavBarActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_nav_bar)
 
-        val navHomeButton = findViewById<ImageButton>(R.id.navHomeButton)
-        val navSearchButton = findViewById<ImageButton>(R.id.navSearchButton)
-        val navChatButton = findViewById<ImageButton>(R.id.navChatButton)
-        val navAddButton = findViewById<ImageButton>(R.id.navAddButton)
-
-
-        navHomeButton.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        navChatButton.setOnClickListener {
-            val intent = Intent(this, ChatActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
-
-        navAddButton.setOnClickListener {
-            val intent = Intent(this, CreateActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
 
     }
 
