@@ -77,12 +77,12 @@
                 app:layout_constraintTop_toTopOf="@+id/editText" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/textViewRoma"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="40dp"
-                android:text="Via vfdbgrsfve"
+                android:text="Via Roma"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -95,11 +95,12 @@
                 android:layout_marginTop="20dp"
                 android:text="Campo: sintetico"
                 android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="@+id/textView22"
-                app:layout_constraintStart_toStartOf="@+id/textView22"
-                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+                app:layout_constraintEnd_toEndOf="@+id/textViewRoma"
+                app:layout_constraintStart_toStartOf="@+id/textViewRoma"
+                app:layout_constraintTop_toBottomOf="@+id/textViewRoma" />
 
             <TextView
+                android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ore: 21:30"
@@ -111,11 +112,12 @@
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
                 android:text="Giocatori: 4/10"
-                app:layout_constraintEnd_toEndOf="@+id/textView22"
+                app:layout_constraintEnd_toEndOf="@+id/textViewRoma"
                 app:layout_constraintHorizontal_bias="0.398"
-                app:layout_constraintStart_toStartOf="@+id/textView22"
-                tools:layout_editor_absoluteY="321dp" />
+                app:layout_constraintStart_toStartOf="@+id/textViewRoma"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -126,12 +128,15 @@
                 app:layout_constraintStart_toStartOf="@+id/textView24"
                 app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
+
             <ImageView
-                android:id="@+id/imageView20"
-                android:layout_width="wrap_content"
+                android:id="@+id/imageViaRoma"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:layout_marginEnd="40dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
                 android:src="@drawable/immagineviaroma"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editText" />
@@ -142,27 +147,140 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="No scarpe tacchetti"
-                app:layout_constraintEnd_toEndOf="@+id/imageView20"
-                app:layout_constraintStart_toStartOf="@+id/imageView20"
-                app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+                app:layout_constraintEnd_toEndOf="@+id/imageViaRoma"
+                app:layout_constraintStart_toStartOf="@+id/imageViaRoma"
+                app:layout_constraintTop_toBottomOf="@+id/imageViaRoma" />
 
             <TextView
                 android:id="@+id/textView26"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Parastinchi"
-                app:layout_constraintEnd_toEndOf="@+id/imageView20"
-                app:layout_constraintStart_toStartOf="@+id/imageView20"
+                app:layout_constraintEnd_toEndOf="@+id/imageViaRoma"
+                app:layout_constraintStart_toStartOf="@+id/imageViaRoma"
                 app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
             <TextView
+                android:id="@+id/textView28"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pallone"
-                app:layout_constraintEnd_toEndOf="@+id/imageView20"
-                app:layout_constraintStart_toStartOf="@+id/imageView20"
+                app:layout_constraintEnd_toEndOf="@+id/imageViaRoma"
+                app:layout_constraintStart_toStartOf="@+id/imageViaRoma"
                 app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView28" />
+
+            <TextView
+                android:id="@+id/textViewNizza"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Via Nizza"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+            <TextView
+                android:id="@+id/erba"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Campo: erba"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/textViewNizza"
+                app:layout_constraintStart_toStartOf="@+id/textViewNizza"
+                app:layout_constraintTop_toBottomOf="@+id/textViewNizza" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ore: 21:30"
+                app:layout_constraintEnd_toEndOf="@+id/erba"
+                app:layout_constraintStart_toStartOf="@+id/erba"
+                app:layout_constraintTop_toBottomOf="@+id/erba" />
+
+            <ImageView
+                android:id="@+id/imageViaNizza"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:src="@drawable/vianizza"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider" />
+
+            <TextView
+                android:id="@+id/giocatori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Giocatori: 4/10"
+                app:layout_constraintEnd_toEndOf="@+id/textViewNizza"
+                app:layout_constraintStart_toStartOf="@+id/textViewNizza"
+                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+            <TextView
+                android:id="@+id/prezzo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prezzo: 5€"
+                app:layout_constraintEnd_toEndOf="@+id/giocatori"
+                app:layout_constraintStart_toStartOf="@+id/giocatori"
+                app:layout_constraintTop_toBottomOf="@+id/giocatori" />
+
+            <TextView
+                android:id="@+id/scarpe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="No scarpe tacchetti"
+                app:layout_constraintEnd_toEndOf="@+id/imageViaNizza"
+                app:layout_constraintStart_toStartOf="@+id/imageViaNizza"
+                app:layout_constraintTop_toBottomOf="@+id/imageViaNizza" />
+
+            <TextView
+                android:id="@+id/parastinchi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parastinchi"
+                app:layout_constraintEnd_toEndOf="@+id/imageViaNizza"
+                app:layout_constraintStart_toStartOf="@+id/imageViaNizza"
+                app:layout_constraintTop_toBottomOf="@+id/scarpe" />
+
+            <TextView
+                android:id="@+id/pallone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pallone"
+                app:layout_constraintEnd_toEndOf="@+id/imageViaNizza"
+                app:layout_constraintStart_toStartOf="@+id/imageViaNizza"
+                app:layout_constraintTop_toBottomOf="@+id/parastinchi" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/materialDivider2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pallone" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
