@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="410dp"
-        android:layout_height="369dp"
+        android:layout_width="410sp"
+        android:layout_height="369sp"
         android:src="@drawable/tinywow_remove_bg_1646835"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,9 +17,9 @@
 
     <Button
         android:id="@+id/accediButton"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="72dp"
+        android:layout_width="300sp"
+        android:layout_height="60sp"
+        android:layout_marginTop="72sp"
         android:backgroundTint="@color/white"
         android:shadowColor="@color/black"
         android:text="Accedi"
@@ -33,14 +33,14 @@
 
     <Button
         android:id="@+id/regButton"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="300sp"
+        android:layout_height="60sp"
+        android:layout_marginTop="50sp"
         android:backgroundTint="@color/white"
         android:shadowColor="@color/black"
         android:text="Registrati"
         android:textColor="@color/black"
-        android:textSize="24dp"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
