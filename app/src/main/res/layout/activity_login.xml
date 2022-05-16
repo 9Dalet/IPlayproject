@@ -24,6 +24,9 @@
         android:text="Accedi"
         android:textSize="24dp"
         android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:shadowColor="@color/black"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
@@ -36,6 +39,9 @@
         android:text="Registrati"
         android:textSize="24dp"
         android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:shadowColor="@color/black"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/accediButton" />
