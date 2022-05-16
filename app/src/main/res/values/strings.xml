@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">IPlay</string>
-    <string name="Login">GO!</string>
     <string name="authors">from \nSDA</string>
     <string name="chat">Chat</string>
     <string name="title_activity_prova">prova</string>
@@ -11,10 +10,31 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <string name="accedi_login">LOGIN</string>
+    <string name="registrati_login">SIGN IN</string>
+    <string name="fromSDA">from \nSDA</string>
+    <string name="Login">GO!</string>
+    <string name="event_create">Event</string>
+    <string name="when_create">When</string>
+    <string name="location_create">Location</string>
+    <string name="description_create">Description</string>
+    <string name="create_button">CREATE</string>
+    <string name="name_profile">Robberto Federer</string>
+    <string name="sports_profile">Sports</string>
+    <string name="followers_profile">Followers</string>
+    <string name="following_profile">Following</string>
+    <string name="edit_button">Edit profile</string>
+    <string name="title_sport">Sport</string>
+    <string name="title_team">Team</string>
+    <string name="number_sports">5</string>
+    <string name="number_followers">650</string>
+    <string name="number_following">193</string>
+    <string name="email_login">Email</string>
+    <string name="password_login">Password</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-    <string name="create">Create</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
