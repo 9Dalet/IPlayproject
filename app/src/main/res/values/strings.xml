@@ -30,6 +30,17 @@
     <string name="number_following">193</string>
     <string name="email_login">Email</string>
     <string name="password_login">Password</string>
+    <string name="viaroma_search">Via Roma</string>
+    <string name="vianizza_search">Via Nizza</string>
+    <string name="corsofrancia_search">Corso \nFrancia</string>
+    <string name="sintetico_search">Campo: sintetico</string>
+    <string name="erba_search">Campo: erba</string>
+    <string name="ore2130_search">Ore 21:30</string>
+    <string name="numgiocatori_search">Giocatori: 4/10</string>
+    <string name="prezzo_search">Prezzo: 5€</string>
+    <string name="scarpe_search">No scarpe tacchetti</string>
+    <string name="parastinchi_search">Parastinchi</string>
+    <string name="pallone_search">Pallone</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
