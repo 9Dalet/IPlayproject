@@ -32,7 +32,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="30dp"
-                android:text="@string/number_followers"
+                android:text="650"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/name_profile"
+                android:text="Robberto F."
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -54,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/number_sports"
+                android:text="5"
                 app:layout_constraintEnd_toStartOf="@+id/followersButton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -64,7 +64,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/number_following"
+                android:text="193"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/followersButton"
                 app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/sports_profile"
+                android:text="Sports"
                 app:layout_constraintEnd_toEndOf="@+id/sportsButton"
                 app:layout_constraintStart_toStartOf="@+id/sportsButton"
                 app:layout_constraintTop_toBottomOf="@+id/sportsButton" />
@@ -84,7 +84,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/followers_profile"
+                android:text="Followers"
                 app:layout_constraintEnd_toEndOf="@+id/followersButton"
                 app:layout_constraintStart_toStartOf="@+id/followersButton"
                 app:layout_constraintTop_toBottomOf="@+id/followersButton" />
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/following_profile"
+                android:text="Following"
                 app:layout_constraintEnd_toEndOf="@+id/followingButton"
                 app:layout_constraintStart_toStartOf="@+id/followingButton"
                 app:layout_constraintTop_toBottomOf="@+id/followingButton" />
@@ -105,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/edit_button"
+                android:text="Edit profile"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/followersTextView" />
@@ -115,7 +115,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="@string/title_sport"
+                android:text="Sport"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -180,12 +180,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/title_team"
+                android:text="Team"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView2"
