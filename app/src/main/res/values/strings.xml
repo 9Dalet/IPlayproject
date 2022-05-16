@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">IPlay</string>
-    <string name="authors">from \nSDA</string>
     <string name="chat">Chat</string>
     <string name="title_activity_prova">prova</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
