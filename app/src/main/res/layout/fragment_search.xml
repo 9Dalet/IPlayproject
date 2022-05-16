@@ -7,9 +7,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".search.SearchFragment">
 
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -282,8 +282,97 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/pallone" />
 
+            <TextView
+                android:id="@+id/corsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Corso \nFrancia"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider2"/>
+
+            <TextView
+                android:id="@+id/sinteticoCorsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Campo: sintetico"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/corsoFrancia"
+                app:layout_constraintStart_toStartOf="@+id/corsoFrancia"
+                app:layout_constraintTop_toBottomOf="@+id/corsoFrancia" />
+
+            <TextView
+                android:id="@+id/oreCorsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ore: 19:30"
+                app:layout_constraintEnd_toEndOf="@+id/sinteticoCorsoFrancia"
+                app:layout_constraintStart_toStartOf="@+id/sinteticoCorsoFrancia"
+                app:layout_constraintTop_toBottomOf="@+id/sinteticoCorsoFrancia" />
+
+            <TextView
+                android:id="@+id/numGiocatori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="Giocatori: 4/10"
+                app:layout_constraintEnd_toEndOf="@+id/corsoFrancia"
+                app:layout_constraintStart_toStartOf="@+id/corsoFrancia"
+                app:layout_constraintTop_toBottomOf="@+id/oreCorsoFrancia" />
+
+            <TextView
+                android:id="@+id/prezzoCorsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Prezzo: 5€"
+                app:layout_constraintEnd_toEndOf="@+id/numGiocatori"
+                app:layout_constraintStart_toStartOf="@+id/numGiocatori"
+                app:layout_constraintTop_toBottomOf="@+id/numGiocatori" />
+
+            <ImageView
+                android:id="@+id/imageView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/corsofrancia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/materialDivider2" />
+
+            <TextView
+                android:id="@+id/scarpeCorsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="No scarpe tacchetti"
+                app:layout_constraintEnd_toEndOf="@+id/imageView20"
+                app:layout_constraintStart_toStartOf="@+id/imageView20"
+                app:layout_constraintTop_toBottomOf="@+id/imageView20" />
+
+            <TextView
+                android:id="@+id/parastinchiCorsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Parastinchi"
+                app:layout_constraintEnd_toEndOf="@+id/scarpeCorsoFrancia"
+                app:layout_constraintStart_toStartOf="@+id/scarpeCorsoFrancia"
+                app:layout_constraintTop_toBottomOf="@+id/scarpeCorsoFrancia" />
+
+            <TextView
+                android:id="@+id/palloneCorsoFrancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pallone"
+                app:layout_constraintEnd_toEndOf="@+id/parastinchiCorsoFrancia"
+                app:layout_constraintStart_toStartOf="@+id/parastinchiCorsoFrancia"
+                app:layout_constraintTop_toBottomOf="@+id/parastinchiCorsoFrancia" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    </ScrollView>-->
+    </ScrollView>
 
 </FrameLayout>
