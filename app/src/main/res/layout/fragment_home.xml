@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment"
     android:id="@+id/homepage"
-    android:background="@drawable/background_home">
+    android:background="@drawable/background_home_xd">
 
     <ScrollView
         android:layout_width="match_parent"
