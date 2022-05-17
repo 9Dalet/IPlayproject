@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment"
-    android:id="@+id/homepage">
+    android:id="@+id/homepage"
+    android:background="@drawable/background_home">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -147,41 +148,82 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/football"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
                         android:layout_marginStart="20dp"
+                        android:backgroundTint="@color/white"
                         android:src="@drawable/football"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <TextView
+                        android:id="@+id/footballTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/pallone_image"
+                        app:layout_constraintEnd_toEndOf="@+id/football"
+                        app:layout_constraintStart_toStartOf="@+id/football"
+                        app:layout_constraintTop_toBottomOf="@+id/football" />
+
+                    <ImageButton
                         android:id="@+id/tennis"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="30dp"
+                        android:backgroundTint="@color/white"
                         android:src="@drawable/tennis"
                         app:layout_constraintStart_toEndOf="@+id/football"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <TextView
+                        android:id="@+id/tennisTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tennis_image"
+                        app:layout_constraintEnd_toEndOf="@+id/tennis"
+                        app:layout_constraintStart_toStartOf="@+id/tennis"
+                        app:layout_constraintTop_toBottomOf="@+id/tennis" />
+
+                    <ImageButton
                         android:id="@+id/beachvolley"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="30dp"
+                        android:backgroundTint="@color/white"
                         android:src="@drawable/beachvolley"
                         app:layout_constraintStart_toEndOf="@+id/tennis"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <TextView
+                        android:id="@+id/volleyballTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/volleyball_image"
+                        app:layout_constraintEnd_toEndOf="@+id/beachvolley"
+                        app:layout_constraintStart_toStartOf="@+id/beachvolley"
+                        app:layout_constraintTop_toBottomOf="@+id/beachvolley" />
+
+                    <ImageButton
                         android:id="@+id/basketball"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="30dp"
+                        android:backgroundTint="@color/white"
                         android:src="@drawable/basketball"
                         app:layout_constraintStart_toEndOf="@+id/beachvolley"
                         app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/basketballTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/basketball_image"
+                        app:layout_constraintEnd_toEndOf="@+id/basketball"
+                        app:layout_constraintStart_toStartOf="@+id/basketball"
+                        app:layout_constraintTop_toBottomOf="@+id/basketball" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -211,45 +253,50 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
+                    android:layout_height="154dp"
+                    tools:layout_editor_absoluteY="1dp">
 
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/imageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/fototeam1"
+                        android:background="@drawable/profile_shape"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/imageView5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/fototeam2"
+                        android:background="@drawable/profile_shape"
                         app:layout_constraintStart_toEndOf="@+id/imageView2"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/imageView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
+                        android:background="@drawable/profile_shape"
                         android:layout_marginTop="20dp"
                         android:src="@drawable/fototeam3"
                         app:layout_constraintStart_toEndOf="@+id/imageView5"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/imageView6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
+                        android:background="@drawable/profile_shape"
                         android:src="@drawable/fototeam4"
                         app:layout_constraintStart_toEndOf="@+id/imageView4"
                         app:layout_constraintTop_toTopOf="parent" />

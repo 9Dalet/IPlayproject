@@ -41,6 +41,10 @@
     <string name="scarpe_search">No scarpe tacchetti</string>
     <string name="parastinchi_search">Parastinchi</string>
     <string name="pallone_search">Pallone</string>
+    <string name="pallone_image">Football</string>
+    <string name="tennis_image">Tennis</string>
+    <string name="volleyball_image">Volleyball</string>
+    <string name="basketball_image">Basketball</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
