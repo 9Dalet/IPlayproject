@@ -24,7 +24,7 @@
         android:layout_marginTop="72sp"
         android:backgroundTint="@color/white"
         android:shadowColor="@color/black"
-        android:text="Accedi"
+        android:text="Login"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"
