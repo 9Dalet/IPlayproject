@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".login.LoginActivity">
 
+
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="410sp"
@@ -22,7 +24,7 @@
         android:layout_marginTop="72sp"
         android:backgroundTint="@color/white"
         android:shadowColor="@color/black"
-        android:text="Accedi"
+        android:text="Login"
         android:textColor="@color/black"
         android:textSize="24dp"
         android:textStyle="bold"

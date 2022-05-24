@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.IPlay">
         <activity
+            android:name=".EmailAccess.EmailLogin"
+            android:exported="false" />
+        <activity
             android:name=".registrati.RegistratiActivity"
             android:exported="false" />
         <activity

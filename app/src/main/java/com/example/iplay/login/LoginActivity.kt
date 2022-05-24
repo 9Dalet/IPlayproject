@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.iplay.EmailAccess.EmailLogin
 import com.example.iplay.R
-import com.example.iplay.home.HomeFragment
-import com.example.iplay.navbar.NavBarActivity
+
 import com.example.iplay.registrati.RegistratiActivity
 
 class LoginActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
-            val intent = Intent(this, NavBarActivity::class.java)
+            val intent = Intent(this, EmailLogin::class.java)
             startActivity(intent)
             finish()
         }
