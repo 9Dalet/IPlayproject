@@ -45,6 +45,7 @@
     <string name="tennis_image">Tennis</string>
     <string name="volleyball_image">Volleyball</string>
     <string name="basketball_image">Basketball</string>
+    <string name="create_instructions">Create your event specifying the data below</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

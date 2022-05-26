@@ -19,24 +19,7 @@
             android:name=".login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".create.CreateActivity"
-            android:exported="false" />
-        <activity
             android:name=".navbar.NavBarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".chat.prova"
-            android:exported="false"
-            android:label="@string/title_activity_prova"
-            android:theme="@style/Theme.IPlay.NoActionBar" />
-        <activity
-            android:name=".chat.ChatActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ChatActivity"
-            android:exported="false" />
-        <activity
-            android:name=".home.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
