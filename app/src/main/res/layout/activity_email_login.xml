@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".EmailAccess.EmailLogin">
 
-
         <TextView
             android:id="@+id/textView6"
             app:layout_constraintBottom_toBottomOf="parent"

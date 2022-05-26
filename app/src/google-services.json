@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "168659030257",
+    "project_id": "registrazione-e-login-iplay",
+    "storage_bucket": "registrazione-e-login-iplay.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168659030257:android:f1795f7e964d2eaf8fd950",
+        "android_client_info": {
+          "package_name": "com.example.iplay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168659030257-09nsnpmg40gpo6tjl3re7t0gqgg9anga.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDKs315wj8ch2tvT7UqmgdAklWQCRiEtw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168659030257-09nsnpmg40gpo6tjl3re7t0gqgg9anga.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
