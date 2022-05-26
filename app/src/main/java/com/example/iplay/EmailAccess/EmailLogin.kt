@@ -48,13 +48,6 @@ class EmailLogin : AppCompatActivity() {
                 Toast.makeText(this, "Account not created", Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
-//            if () {
-//                val intent = Intent(this, NavBarActivity::class.java)
-//                startActivity(intent)
-//                finish()
-//            } else {
-//                Toast.makeText(this, "Invalid data", Toast.LENGTH_SHORT).show();
-//            }
         }
     }
 
