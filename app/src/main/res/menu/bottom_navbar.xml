@@ -9,10 +9,7 @@
         android:id="@+id/searchFragment"
         android:title="Search"
         android:icon="@drawable/ic_baseline_search_24"/>
-    <item
-        android:id="@+id/chatFragment"
-        android:title="Chat"
-        android:icon="@drawable/ic_baseline_chat_24"/>
+
     <item
         android:id="@+id/createFragment"
         android:title="Create"
