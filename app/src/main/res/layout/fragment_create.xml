@@ -6,6 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".create.CreateFragment">
 
+
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -15,15 +17,30 @@
             android:layout_height="match_parent">
 
             <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:text="@string/create_instructions"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/eventTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="30dp"
                 android:text="@string/event_create"
-                android:textSize="32dp"
-                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/eventEditText"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
             <EditText
                 android:id="@+id/eventEditText"
@@ -40,8 +57,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/when_create"
-                android:textSize="32dp"
-                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/whenEditText"
                 app:layout_constraintTop_toBottomOf="@+id/eventEditText" />
 
@@ -60,8 +77,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/location_create"
-                android:textSize="32dp"
-                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/locationEditText"
                 app:layout_constraintTop_toBottomOf="@+id/whenEditText" />
 
@@ -80,8 +97,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:text="@string/description_create"
-                android:textSize="32dp"
-                android:textStyle="bold"
+                android:textSize="24dp"
+                android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/descriptionEditText"
                 app:layout_constraintTop_toBottomOf="@+id/locationEditText" />
 
@@ -89,26 +106,34 @@
                 android:id="@+id/descriptionEditText"
                 android:layout_width="350dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.508"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
-            <Button
-                android:id="@+id/createButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="@string/create_button"
-                android:backgroundTint="@color/white"
-                android:shadowColor="@color/black"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descriptionEditText" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/createButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            app:background="@drawable/create_button"
+            android:backgroundTint="@color/orange"
+            android:text="@string/create_button"
+            android:textColor="@color/black"
+            tools:layout_editor_absoluteX="160dp"
+            tools:layout_editor_absoluteY="634dp" />
+
+    </RelativeLayout>
 
 </FrameLayout>

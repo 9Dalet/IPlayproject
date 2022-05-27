@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
+import androidx.navigation.fragment.findNavController
 import com.example.iplay.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -24,12 +26,11 @@ class HomeFragment : Fragment() {
     private var param2: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
-
-
         }
     }
 

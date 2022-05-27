@@ -5,8 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment"
-    android:id="@+id/homepage"
-    android:background="@drawable/background_home_xd">
+    android:id="@+id/homepage">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -35,7 +34,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:text="650"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/orange"
                 android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="Robberto DIOMERDA F."
+                android:text="Robberto F."
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -60,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="5"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/orange"
                 android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/followersButton"
@@ -73,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="193"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@color/orange"
                 android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"

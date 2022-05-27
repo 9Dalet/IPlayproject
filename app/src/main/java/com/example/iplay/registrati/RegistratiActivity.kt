@@ -11,6 +11,7 @@ import android.widget.Toast
 import com.example.iplay.EmailAccess.EmailLogin
 import com.example.iplay.R
 import com.example.iplay.home.HomeFragment
+import com.example.iplay.navbar.NavBarActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -36,7 +37,7 @@ class RegistratiActivity : AppCompatActivity() {
         val password = emptyPassword.text.toString()
 
         button.setOnClickListener {
-            val intent = Intent(this, ::class.java)
+            val intent = Intent(this, NavBarActivity::class.java)
             startActivity(intent)
             finish()
         }

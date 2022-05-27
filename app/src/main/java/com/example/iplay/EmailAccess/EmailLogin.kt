@@ -1,11 +1,14 @@
 package com.example.iplay.EmailAccess
 
+import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Patterns
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.example.iplay.R
@@ -19,20 +22,32 @@ import com.google.firebase.ktx.Firebase
 class EmailLogin : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+    private lateinit var emailLogin: EditText
+    private lateinit var passwordLogin: EditText
+    private lateinit var button: Button
+    private lateinit var email: String
+    private lateinit var password: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_email_login)
 
-        // Initialize Firebase Auth
+        email = ""
+        password = ""
         auth = Firebase.auth
+        emailLogin = findViewById(R.id.editTextTextEmailAddress)
+        passwordLogin = findViewById(R.id.editTextTextPassword)
+        button = findViewById(R.id.buttonLogin)
 
-        val button = findViewById<Button>(R.id.buttonLogin)
         button.setOnClickListener {
-            saveUserData()
-            val intent = Intent(this, NavBarActivity::class.java)
-            startActivity(intent)
-            finish()
+            if (emailLogin.text.isNotEmpty() || passwordLogin.text.isNotEmpty()) {
+                email = emailLogin.text.toString()
+                password = passwordLogin.text.toString()
+                signIn(email, password)
+            } else {
+                Toast.makeText(this, "Account not created", Toast.LENGTH_SHORT).show();
+                return@setOnClickListener
+            }
         }
     }
 
@@ -40,75 +55,60 @@ class EmailLogin : AppCompatActivity() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             reload();
         }
     }
 
-    private fun getUserProfile() {
-        // [START get_user_profile]
-        val user = Firebase.auth.currentUser
-        user?.let {
-            // Name, email address, and profile photo Url
-            val name = user.displayName
-            val email = user.email
-            val photoUrl = user.photoUrl
+//    private fun getUserProfile() {
+//        val user = Firebase.auth.currentUser
+//        user?.let {
+//            val name = user.displayName
+//            val email = user.email
+//            val photoUrl = user.photoUrl
+//
+//            val emailVerified = user.isEmailVerified
+//
+//            // The user's ID, unique to the Firebase project. Do NOT use this value to
+//            // authenticate with your backend server, if you have one. Use
+//            // FirebaseUser.getToken() instead.
+//            val uid = user.uid
+//        }
+//    }
 
-            // Check if user's email is verified
-            val emailVerified = user.isEmailVerified
+    private fun signIn(email: String, password: String) {
 
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getToken() instead.
-            val uid = user.uid
-        }
-        // [END get_user_profile]
-    }
-
-    private fun singIn(email: String, password: String){
         auth.signInWithEmailAndPassword(email, password)
-            .addOnCompleteListener(this) { task ->
+            .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
-                    Log.d(TAG, "signInWithEmail:success")
+                    Log.d("aaaaa", "signInWithEmail:success")
                     val user = auth.currentUser
                     updateUI(user)
-                } else {
-                    // If sign in fails, display a message to the user.
-                    Log.w(TAG, "signInWithEmail:failure", task.exception)
-                    Toast.makeText(baseContext, "Authentication failed.",
-                        Toast.LENGTH_SHORT).show()
-                    updateUI(null)
+                    val intent = Intent(this, NavBarActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
-         }
-    }
-
-    private fun updateUI(user: FirebaseUser?) {
-
+            }
+            .addOnFailureListener { task ->
+                // If sign in fails, display a message to the user.
+                Log.w("bbbbb", "signInWithEmail:failure", task)
+                Toast.makeText(
+                    baseContext, "Authentication failed.",
+                    Toast.LENGTH_SHORT
+                ).show()
+                updateUI(null)
+            }
     }
 
     private fun reload() {
 
     }
 
-    private fun saveUserData() {
-        val db = Firebase.firestore
-        // Create a new user with a first, middle, and last name
-        val user = hashMapOf(
-            "first" to "Alan",
-            "middle" to "Mathison",
-            "last" to "Turing",
-            "born" to 1912
-        )
-        // Add a new document with a generated ID
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
+    private fun updateUI(currentUser: FirebaseUser?) {
 
     }
 }
+
+
+
