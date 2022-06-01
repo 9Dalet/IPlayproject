@@ -9,6 +9,7 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
 import com.example.iplay.R
@@ -38,6 +39,7 @@ class EmailLogin : AppCompatActivity() {
         emailLogin = findViewById(R.id.editTextTextEmailAddress)
         passwordLogin = findViewById(R.id.editTextTextPassword)
         button = findViewById(R.id.buttonLogin)
+        val backButton = findViewById<ImageView>(R.id.backButton)
 
         button.setOnClickListener {
             if (emailLogin.text.isNotEmpty() || passwordLogin.text.isNotEmpty()) {
@@ -48,6 +50,10 @@ class EmailLogin : AppCompatActivity() {
                 Toast.makeText(this, "Fill in all fields", Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
+        }
+
+        backButton.setOnClickListener {
+            finish()
         }
     }
 

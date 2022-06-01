@@ -28,13 +28,11 @@ class LoginActivity : AppCompatActivity() {
         button.setOnClickListener {
             val intent = Intent(this, EmailLogin::class.java)
             startActivity(intent)
-            finish()
         }
 
         regButton.setOnClickListener{
             val intent = Intent(this, RegistratiActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 

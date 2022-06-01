@@ -8,6 +8,7 @@ import android.util.Log
 import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import com.example.iplay.EmailAccess.EmailLogin
 import com.example.iplay.R
@@ -45,6 +46,7 @@ class RegistratiActivity : AppCompatActivity() {
         emptyEmail = findViewById(R.id.editTextTextEmailAddress2)
         emptyPassword = findViewById(R.id.editTextTextPassword2)
         button = findViewById(R.id.button2)
+        val backButton = findViewById<ImageView>(R.id.backButton)
 
 
         button.setOnClickListener {
@@ -58,8 +60,13 @@ class RegistratiActivity : AppCompatActivity() {
                 Toast.makeText(this, "Enter correct data", Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
-
         }
+
+        backButton.setOnClickListener {
+            finish()
+        }
+
+
 
     }
 
