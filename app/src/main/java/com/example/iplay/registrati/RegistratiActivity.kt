@@ -23,23 +23,34 @@ class RegistratiActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var emptyEmail: EditText
     private lateinit var emptyPassword: EditText
+    private lateinit var nameEditText: EditText
+    private lateinit var surnameEditText: EditText
     private lateinit var button: Button
     private lateinit var email: String
     private lateinit var password: String
+    private lateinit var name: String
+    private lateinit var surname: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrati)
 
+        nameEditText = findViewById(R.id.nameEditText)
+        surnameEditText = findViewById(R.id.surnameEditText)
         email = ""
         password = ""
+        name = ""
+        surname = ""
         auth = Firebase.auth
         emptyEmail = findViewById(R.id.editTextTextEmailAddress2)
         emptyPassword = findViewById(R.id.editTextTextPassword2)
         button = findViewById(R.id.button2)
 
+
         button.setOnClickListener {
-            if (emptyPassword.text.isNotEmpty() || (emptyEmail.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
+            if (nameEditText.text.isNotEmpty() || surnameEditText.text.isNotEmpty() || emptyPassword.text.isNotEmpty() || (emptyEmail.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches())) {
+                name = nameEditText.text.toString()
+                surname = surnameEditText.text.toString()
                 email = emptyEmail.text.toString()
                 password = emptyPassword.text.toString()
                 createAccount(email, password)
