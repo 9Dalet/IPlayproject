@@ -2,8 +2,6 @@
   <library name="Gradle: com.google.firebase:protolite-well-known-types:18.0.0@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6967c83f5f17f94f9f249a9f0e74bcf6/transformed/protolite-well-known-types-18.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/c34af6ea2f0f0b89a66cac0c8db1f58c/transformed/protolite-well-known-types-18.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c34af6ea2f0f0b89a66cac0c8db1f58c/transformed/protolite-well-known-types-18.0.0/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/c34af6ea2f0f0b89a66cac0c8db1f58c/transformed/protolite-well-known-types-18.0.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/dc648fb1310f88aca1e2243417b0efaa/transformed/protolite-well-known-types-18.0.0/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/dc648fb1310f88aca1e2243417b0efaa/transformed/protolite-well-known-types-18.0.0/jars/classes.jar!/" />

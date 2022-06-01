@@ -2,8 +2,6 @@
   <library name="Gradle: io.grpc:grpc-android:1.44.1@aar">
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5822fca8781bb173395f318d754a564e/transformed/grpc-android-1.44.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/497b3c2341fc655e3f36a8b6d9c6389b/transformed/grpc-android-1.44.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/497b3c2341fc655e3f36a8b6d9c6389b/transformed/grpc-android-1.44.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/497b3c2341fc655e3f36a8b6d9c6389b/transformed/grpc-android-1.44.1/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/7083f98211615ecdba89fe1fab5377ff/transformed/grpc-android-1.44.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/7083f98211615ecdba89fe1fab5377ff/transformed/grpc-android-1.44.1/AndroidManifest.xml" />
