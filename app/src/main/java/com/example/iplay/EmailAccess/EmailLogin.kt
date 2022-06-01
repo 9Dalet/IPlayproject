@@ -45,7 +45,7 @@ class EmailLogin : AppCompatActivity() {
                 password = passwordLogin.text.toString()
                 signIn(email, password)
             } else {
-                Toast.makeText(this, "Account not created", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Fill in all fields", Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
         }
