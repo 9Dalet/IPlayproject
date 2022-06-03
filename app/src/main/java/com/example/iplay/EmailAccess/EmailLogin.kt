@@ -94,16 +94,16 @@ class EmailLogin : AppCompatActivity() {
                     val intent = Intent(this, NavBarActivity::class.java)
                     startActivity(intent)
                     finish()
+
+                } else {
+                    // If sign in fails, display a message to the user.
+                    Log.w("bbbbb", "signInWithEmail:failure", task.exception)
+                    Toast.makeText(
+                        baseContext, "Authentication failed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    updateUI(null)
                 }
-            }
-            .addOnFailureListener { task ->
-                // If sign in fails, display a message to the user.
-                Log.w("bbbbb", "signInWithEmail:failure", task)
-                Toast.makeText(
-                    baseContext, "Authentication failed.",
-                    Toast.LENGTH_SHORT
-                ).show()
-                updateUI(null)
             }
     }
 
