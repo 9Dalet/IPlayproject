@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,12 +14,14 @@ import com.example.iplay.navbar.NavBarActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import kotlinx.coroutines.flow.callbackFlow
 import java.sql.Timestamp
 
 class SearchFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private val auth = FirebaseAuth.getInstance()
+    private lateinit var storage: FirebaseStorage
     private val sports = ArrayList<SportEvent>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +46,9 @@ class SearchFragment : Fragment() {
     }
 
     private fun sportsData() {
+        storage = FirebaseStorage.getInstance()
+        val storageRef = storage.reference
+
         FirebaseFirestore.getInstance().collection("1").get().addOnCompleteListener {
             if(it.isSuccessful) {
                 for (document in it.result) {
@@ -52,15 +58,19 @@ class SearchFragment : Fragment() {
                     val ora: String = document.data["ora"].toString()
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
-                    addSports(luogo, numPersone, data, ora, prezzo, sport)
+                    storageRef.child("corsofrancia.png").downloadUrl.addOnCompleteListener{
+                        val imageurl = it.result.toString()
+                        Toast.makeText(context, "diocane", Toast.LENGTH_SHORT).show()
+                        addSports(luogo, numPersone, data, ora, prezzo, sport, imageurl)
+                    }
                 }
                 loadRecyclerView()
             }
         }
     }
 
-    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String) {
-        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport)
+    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, imagurl: String) {
+        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, imagurl)
         sports.add(newAddSports)
     }
 
