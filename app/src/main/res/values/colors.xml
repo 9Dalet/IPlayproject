@@ -10,4 +10,5 @@
     <color name="orange">#FFA200</color>
     <color name="gray">#949790</color>
     <color name="backGroundGrey">#DADBD8</color>
+    <color name="darkgrey">#707070</color>
 </resources>
