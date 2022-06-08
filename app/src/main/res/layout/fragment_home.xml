@@ -48,9 +48,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="30dp"
-                android:text="650"
                 android:backgroundTint="@color/white"
                 android:shadowColor="@color/black"
+                android:text="650"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -73,9 +73,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="5"
                 android:backgroundTint="@color/white"
                 android:shadowColor="@color/black"
+                android:text="5"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/followersButton"
                 app:layout_constraintStart_toStartOf="parent"
@@ -86,9 +86,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
-                android:text="193"
                 android:backgroundTint="@color/white"
                 android:shadowColor="@color/black"
+                android:text="193"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/followersButton"
@@ -174,8 +174,8 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="30dp"
-                        android:src="@drawable/sport_icon_shape"
                         android:background="@drawable/tennisapi"
+                        android:src="@drawable/sport_icon_shape"
                         app:layout_constraintStart_toEndOf="@+id/football"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,8 +193,8 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="30dp"
-                        android:src="@drawable/sport_icon_shape"
                         android:background="@drawable/pallavolo"
+                        android:src="@drawable/sport_icon_shape"
                         app:layout_constraintStart_toEndOf="@+id/tennis"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -212,8 +212,8 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_marginStart="30dp"
-                        android:src="@drawable/sport_icon_shape"
                         android:background="@drawable/basket"
+                        android:src="@drawable/sport_icon_shape"
                         app:layout_constraintStart_toEndOf="@+id/beachvolley"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -261,8 +261,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/donaldrectangle"
                         android:background="@drawable/profile_shape"
+                        android:src="@drawable/donaldrectangle"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -272,8 +272,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
-                        android:src="@drawable/redrectangle"
                         android:background="@drawable/profile_shape"
+                        android:src="@drawable/redrectangle"
                         app:layout_constraintStart_toEndOf="@+id/imageView2"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -282,8 +282,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="20dp"
-                        android:background="@drawable/profile_shape"
                         android:layout_marginTop="20dp"
+                        android:background="@drawable/profile_shape"
                         android:src="@drawable/whiterectangle"
                         app:layout_constraintStart_toEndOf="@+id/imageView5"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -304,8 +304,8 @@
                         android:layout_width="39dp"
                         android:layout_height="37dp"
                         android:layout_marginStart="20dp"
-                        android:src="@drawable/ic_baseline_person_add_alt_1_24"
                         android:background="@drawable/new_person_shape"
+                        android:src="@drawable/ic_baseline_person_add_alt_1_24"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/imageView6"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -356,11 +356,11 @@
                 android:id="@+id/imageView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="104dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/tracciato"
                 app:layout_constraintEnd_toEndOf="@+id/imageView11"
                 app:layout_constraintStart_toStartOf="@+id/imageView11"
-                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+                app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -384,6 +384,39 @@
                 android:textColor="@color/white"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+            <ImageButton
+                android:id="@+id/imageButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/sport_icon_shape"
+                android:src="@drawable/instagram"
+                app:layout_constraintStart_toStartOf="@+id/imageView11"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/sport_icon_shape"
+                android:src="@drawable/facebook"
+                app:layout_constraintStart_toEndOf="@+id/imageButton2"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <ImageButton
+                android:id="@+id/imageButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/sport_icon_shape"
+                android:src="@drawable/youtube"
+                app:layout_constraintStart_toEndOf="@+id/imageButton3"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
