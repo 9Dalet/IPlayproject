@@ -21,11 +21,14 @@
                 android:id="@+id/imageViewCopertina"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:layout_marginTop="4dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/background_home"
+                android:scaleType="fitXY"
+                android:background="@null"
+                style="?android:attr/borderlessButtonStyle"/>
 
             <ImageButton
                 android:id="@+id/imageView"
