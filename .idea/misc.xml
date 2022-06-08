@@ -11,7 +11,7 @@
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/layout/card_layout.xml" value="0.24895833333333334" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/layout/fragment_chat.xml" value="0.23148148148148148" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/layout/fragment_create.xml" value="0.25" />
-        <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/layout/fragment_home.xml" value="0.23148148148148148" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/IPlayproject/app/src/main/res/menu/bottom_navbar.xml" value="0.25" />
         <entry key="..\:/AAA PERSONALE/AndroidStudioProjects/iplay-simone/IPlay/app/src/main/res/layout/activity_chat.xml" value="0.264" />
@@ -50,9 +50,10 @@
         <entry key="..\:/Users/gecaj/OneDrive/Desktop/ICTS/Android/APP GRUPPO-SPORT/IPlayproject/app/src/main/res/layout/fragment_chat.xml" value="0.25" />
         <entry key="..\:/Users/gecaj/OneDrive/Desktop/ICTS/Android/APP GRUPPO-SPORT/IPlayproject/app/src/main/res/layout/fragment_login.xml" value="0.12158054711246201" />
         <entry key="..\:/Users/gecaj/OneDrive/Desktop/ICTS/Android/APP GRUPPO-SPORT/IPlayproject/app/src/main/res/layout/fragment_search.xml" value="0.21331521739130435" />
+        <entry key="app/src/main/res/drawable/profile_shape.xml" value="0.2415" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.182518115942029" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.182518115942029" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.13728470111448834" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.23066357264549453" />
       </map>
     </option>
   </component>

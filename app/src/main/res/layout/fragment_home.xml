@@ -5,7 +5,8 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment"
-    android:id="@+id/homepage">
+    android:id="@+id/homepage"
+    android:background="@color/backGroundGrey">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,10 +18,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
             <ImageButton
                 android:id="@+id/imageViewCopertina"
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="180dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +47,7 @@
                 android:layout_height="48dp"
                 android:layout_marginTop="30dp"
                 android:text="650"
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/white"
                 android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="5"
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/white"
                 android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/followersButton"
@@ -83,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:text="193"
-                android:backgroundTint="@color/orange"
+                android:backgroundTint="@color/white"
                 android:shadowColor="@color/black"
                 android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -120,31 +122,18 @@
                 app:layout_constraintStart_toStartOf="@+id/followingButton"
                 app:layout_constraintTop_toBottomOf="@+id/followingButton" />
 
-            <Button
-                android:id="@+id/ediProfileButton"
-                style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Edit profile"
-                android:backgroundTint="@color/white"
-                android:shadowColor="@color/black"
-                android:textColor="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/followersTextView" />
-
             <TextView
                 android:id="@+id/titleSports"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="32dp"
                 android:text="Sport"
                 android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ediProfileButton" />
+                app:layout_constraintTop_toBottomOf="@+id/followersTextView" />
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView"
@@ -322,6 +311,15 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
             </HorizontalScrollView>
+
+            <ImageButton
+                android:id="@+id/imageButton"
+                android:layout_width="47dp"
+                android:layout_height="39dp"
+                android:layout_marginTop="28dp"
+                android:src="@drawable/ic_baseline_edit_24"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
