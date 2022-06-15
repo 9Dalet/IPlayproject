@@ -47,8 +47,8 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
         val sportEvento = holder.view.findViewById<TextView>(R.id.textView4)
         sportEvento.text = event.sport
 
-        val imageurl = holder.view.findViewById<ImageView>(R.id.imageSport)
-        Glide.with(context).load(imageurl).into(imageurl)
+//        val imageurl = holder.view.findViewById<ImageView>(R.id.imageSport)
+//        Glide.with(context).load(imageurl).into(imageurl)
 
 
 //        holder.view.setOnClickListener {

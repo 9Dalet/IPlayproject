@@ -58,19 +58,19 @@ class SearchFragment : Fragment() {
                     val ora: String = document.data["ora"].toString()
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
-                    storageRef.child("corsofrancia.png").downloadUrl.addOnCompleteListener{
-                        val imageurl = it.result.toString()
-                        Toast.makeText(context, "diocane", Toast.LENGTH_SHORT).show()
-                        addSports(luogo, numPersone, data, ora, prezzo, sport, imageurl)
-                    }
+                    storageRef.child("images/corsofrancia.png")//.downloadUrl.addOnCompleteListener{
+//                        val imageurl = it.result.toString()
+//                        Toast.makeText(context, "diocane", Toast.LENGTH_SHORT).show()
+                        addSports(luogo, numPersone, data, ora, prezzo, sport) //, imageurl)
+//                    }
                 }
                 loadRecyclerView()
             }
         }
     }
 
-    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, imagurl: String) {
-        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, imagurl)
+    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String) {//, imageurl: String) {
+        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport) //, imageurl)
         sports.add(newAddSports)
     }
 
@@ -78,6 +78,7 @@ class SearchFragment : Fragment() {
         recyclerView.adapter = Adapter(sports, requireActivity())
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
     }
+
 
     companion object {
         fun newInstance(param1: String, param2: String) =
