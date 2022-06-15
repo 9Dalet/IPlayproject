@@ -12,6 +12,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.ContextCompat.startActivity
+import com.example.iplay.MainActivity
 import com.example.iplay.R
 import com.example.iplay.navbar.NavBarActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -20,9 +21,10 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
+
 class EmailLogin : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    private var auth = FirebaseAuth.getInstance()
     private lateinit var emailLogin: EditText
     private lateinit var passwordLogin: EditText
     private lateinit var button: Button
@@ -57,12 +59,25 @@ class EmailLogin : AppCompatActivity() {
         }
     }
 
-    public override fun onStart() {
+   /* override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            reload();
+           // val intent = Intent(this, NavBarActivity::class.java)
+            //finish()
+            reload()
+        }
+    }*/
+
+    override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if (currentUser != null) {
+            val intent = Intent(this, NavBarActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
