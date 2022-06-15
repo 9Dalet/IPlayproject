@@ -46,14 +46,25 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/nomeSport"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Sport: "
+                app:layout_constraintStart_toEndOf="@+id/imageSport"
+                app:layout_constraintTop_toBottomOf="@+id/nameSport" />
+
+            <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
-                android:text="Tipo di sport"
+                android:text="sport"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.246"
-                app:layout_constraintStart_toEndOf="@+id/imageSport"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/nomeSport"
                 app:layout_constraintTop_toBottomOf="@+id/nameSport" />
 
             <TextView
@@ -61,41 +72,81 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="prenotati"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.716"
+                android:layout_marginEnd="4dp"
+                android:text="prenot"
 
-                app:layout_constraintStart_toEndOf="@+id/textView4"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameSport" />
+
+            <TextView
+                android:id="@+id/costo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="4dp"
+                android:text="Ora: "
+                app:layout_constraintEnd_toStartOf="@+id/prezzo"
+                app:layout_constraintTop_toBottomOf="@+id/giocatori" />
 
             <TextView
                 android:id="@+id/prezzo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:layout_marginEnd="120dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="20dp"
                 android:text="Prezzo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
+                android:id="@+id/giocatori"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Giocatori: "
+                app:layout_constraintEnd_toStartOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/nameSport" />
+
+            <TextView
+                android:id="@+id/quando"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Quando: "
+                app:layout_constraintEnd_toStartOf="@+id/textView7"
+                app:layout_constraintHorizontal_bias="0.909"
+                app:layout_constraintStart_toEndOf="@+id/imageSport"
+                app:layout_constraintTop_toBottomOf="@+id/nomeSport" />
+
+            <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="12dp"
                 android:text="Data"
                 app:layout_constraintStart_toEndOf="@+id/imageSport"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
             <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="Prezzo: "
+                app:layout_constraintStart_toEndOf="@+id/imageSport"
+                app:layout_constraintTop_toBottomOf="@+id/quando" />
+
+            <TextView
                 android:id="@+id/oraEvent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="48dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
                 android:text="Ora"
-                app:layout_constraintStart_toEndOf="@+id/imageSport"
+                app:layout_constraintStart_toEndOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
