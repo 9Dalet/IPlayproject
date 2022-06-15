@@ -1,28 +1,28 @@
 package com.example.iplay.search
 
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import androidx.core.view.get
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.ViewTarget
 import com.example.iplay.R
-import com.example.iplay.navbar.NavBarActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
-import kotlinx.coroutines.flow.callbackFlow
-import java.sql.Timestamp
+
 
 class SearchFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private val auth = FirebaseAuth.getInstance()
     private lateinit var storage: FirebaseStorage
     private val sports = ArrayList<SportEvent>()
+    private var image: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +41,7 @@ class SearchFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         recyclerView = view.findViewById(R.id.recycler_view)
+        image = view.findViewById(R.id.imageSport)
 
         sportsData()
     }
@@ -58,10 +59,17 @@ class SearchFragment : Fragment() {
                     val ora: String = document.data["ora"].toString()
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
-                    storageRef.child("images/corsofrancia.png")//.downloadUrl.addOnCompleteListener{
+//                    val storageReference =  storageRef.child("images/corsofrancia.png")
+//                    val imageurl = image?.let { it1 ->
+//                        Glide.with(this).load(storageReference).into(
+//                            it1
+//                        )
+//                    }
+                    //.downloadUrl.addOnCompleteListener{
 //                        val imageurl = it.result.toString()
-//                        Toast.makeText(context, "diocane", Toast.LENGTH_SHORT).show()
-                        addSports(luogo, numPersone, data, ora, prezzo, sport) //, imageurl)
+//                    if (imageurl != null) {
+                        addSports(luogo, numPersone, data, ora, prezzo, sport) //imageurl)
+//                    }
 //                    }
                 }
                 loadRecyclerView()
@@ -69,22 +77,13 @@ class SearchFragment : Fragment() {
         }
     }
 
-    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String) {//, imageurl: String) {
-        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport) //, imageurl)
+    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String) { //imageurl: ViewTarget<ImageView, Drawable>) {
+        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport)// imageurl)
         sports.add(newAddSports)
     }
 
     private fun loadRecyclerView() {
         recyclerView.adapter = Adapter(sports, requireActivity())
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
-    }
-
-
-    companion object {
-        fun newInstance(param1: String, param2: String) =
-            SearchFragment().apply {
-                arguments = Bundle().apply {
-                }
-            }
     }
 }
