@@ -7,7 +7,7 @@
         android:icon="@drawable/ic_baseline_home_24" />
     <item
         android:id="@+id/searchFragment"
-        android:title="Search"
+        android:title="Explore"
         android:icon="@drawable/ic_baseline_search_24"/>
 
     <item
