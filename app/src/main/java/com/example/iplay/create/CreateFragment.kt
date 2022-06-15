@@ -47,17 +47,17 @@ class CreateFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        createButton = view.findViewById(R.id.createButton)
+       // createButton = view.findViewById(R.id.createButton)
         eventEditText = view.findViewById(R.id.eventEditText)
-        whenEditText = view.findViewById(R.id.whenEditText)
+        whenEditText = view.findViewById(R.id.editTextDate)
         locationEditText = view.findViewById(R.id.locationEditText)
-        descriptionEditText = view.findViewById(R.id.descriptionEditText)
+        descriptionEditText = view.findViewById(R.id.editTextTime)
         eventString = ""
         whenString = ""
         locationString = ""
         descriptionString = ""
 
-        createButton.setOnClickListener {
+      /* createButton.setOnClickListener {
             if (eventEditText.text.isNotEmpty() && whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && descriptionEditText.text.isNotEmpty()) {
                 eventString = eventEditText.text.toString()
                 whenString = whenEditText.text.toString()
@@ -67,7 +67,7 @@ class CreateFragment : Fragment() {
                 Toast.makeText(activity, "Fill in all fields", Toast.LENGTH_SHORT).show();
                 return@setOnClickListener
             }
-        }
+        }*/
     }
 
     companion object {

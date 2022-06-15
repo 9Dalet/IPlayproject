@@ -59,28 +59,21 @@
                 android:text="@string/when_create"
                 android:textSize="24dp"
                 android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="@+id/whenEditText"
-                app:layout_constraintTop_toBottomOf="@+id/eventEditText" />
-
-            <EditText
-                android:id="@+id/whenEditText"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.088"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/whenTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/eventEditText" />
 
             <TextView
                 android:id="@+id/locationTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/location_create"
                 android:textSize="24dp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/locationEditText"
-                app:layout_constraintTop_toBottomOf="@+id/whenEditText" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextDate" />
 
             <EditText
                 android:id="@+id/locationEditText"
@@ -96,19 +89,34 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/description_create"
+                android:text="Time"
                 android:textSize="24dp"
                 android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="@+id/descriptionEditText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.086"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/locationEditText" />
 
             <EditText
-                android:id="@+id/descriptionEditText"
-                android:layout_width="350dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="8dp"
+                android:id="@+id/editTextDate"
+                android:layout_width="342dp"
+                android:layout_height="48dp"
+                android:layout_marginTop="12dp"
+                android:ems="10"
+                android:inputType="date"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.508"
+                app:layout_constraintHorizontal_bias="0.449"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/whenTextView" />
+
+            <EditText
+                android:id="@+id/editTextTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.154"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
 
@@ -117,10 +125,10 @@
 
     </ScrollView>
 
-    <RelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="bottom">
+    <!--<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="bottom">
 
         <Button
             android:id="@+id/createButton"
@@ -135,5 +143,5 @@
             tools:layout_editor_absoluteY="634dp" />
 
     </RelativeLayout>
-
+-->
 </FrameLayout>
