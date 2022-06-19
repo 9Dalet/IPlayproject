@@ -6,8 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".create.CreateFragment">
 
-
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -59,16 +57,14 @@
                 android:text="@string/when_create"
                 android:textSize="24dp"
                 android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.088"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/editTextDate"
                 app:layout_constraintTop_toBottomOf="@+id/eventEditText" />
 
             <TextView
                 android:id="@+id/locationTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="20dp"
                 android:text="@string/location_create"
                 android:textSize="24dp"
                 android:textStyle="italic"
@@ -92,9 +88,7 @@
                 android:text="Time"
                 android:textSize="24dp"
                 android:textStyle="italic"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.086"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/editTextTime"
                 app:layout_constraintTop_toBottomOf="@+id/locationEditText" />
 
             <EditText
@@ -113,12 +107,73 @@
                 android:id="@+id/editTextTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10"
+                android:ems="5"
                 android:inputType="time"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.154"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/locationEditText"
                 app:layout_constraintTop_toBottomOf="@+id/descriptionTextView" />
+
+            <TextView
+                android:id="@+id/numPersoneTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="N. person"
+                android:textSize="24dp"
+                android:textStyle="italic"
+                app:layout_constraintEnd_toEndOf="@+id/locationEditText"
+                app:layout_constraintTop_toBottomOf="@+id/locationEditText" />
+
+            <EditText
+                android:id="@+id/numPersoneEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:inputType="number"
+                app:layout_constraintEnd_toEndOf="@+id/locationEditText"
+                app:layout_constraintTop_toBottomOf="@+id/numPersoneTextView" />
+
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Price"
+                android:textSize="24dp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toStartOf="@+id/editTextTime"
+                app:layout_constraintTop_toBottomOf="@+id/editTextTime" />
+
+            <EditText
+                android:id="@+id/priceEditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="5"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="@+id/priceTextView"
+                app:layout_constraintTop_toBottomOf="@+id/priceTextView" />
+
+            <Button
+                android:id="@+id/createButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/orange"
+                android:text="@string/create_button"
+                android:textColor="@color/black"
+                app:background="@drawable/create_button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/priceEditText" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

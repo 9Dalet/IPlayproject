@@ -1,29 +1,36 @@
 package com.example.iplay.create
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.iplay.R
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class CreateFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
     private lateinit var eventEditText: EditText
     private lateinit var whenEditText: EditText
     private lateinit var locationEditText: EditText
-    private lateinit var descriptionEditText: EditText
+    private lateinit var numPersonEditText: EditText
+    private lateinit var timeEditText: EditText
+    private lateinit var priceEditText: EditText
+    private lateinit var progressBar: ProgressBar
     private lateinit var createButton: Button
     private lateinit var eventString: String
     private lateinit var whenString: String
     private lateinit var locationString: String
-    private lateinit var descriptionString: String
+    private lateinit var timeString: String
+    private lateinit var numPersonString: String
+    private lateinit var priceString: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,56 +42,68 @@ class CreateFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-
-
-
         return inflater.inflate(R.layout.fragment_create, container, false)
-
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-       // createButton = view.findViewById(R.id.createButton)
+        createButton = view.findViewById(R.id.createButton)
         eventEditText = view.findViewById(R.id.eventEditText)
         whenEditText = view.findViewById(R.id.editTextDate)
         locationEditText = view.findViewById(R.id.locationEditText)
-        descriptionEditText = view.findViewById(R.id.editTextTime)
+        timeEditText = view.findViewById(R.id.editTextTime)
+        numPersonEditText = view.findViewById(R.id.numPersoneEditText)
+        priceEditText = view.findViewById(R.id.priceEditText)
+        progressBar = view.findViewById(R.id.progressBar)
         eventString = ""
         whenString = ""
         locationString = ""
-        descriptionString = ""
+        timeString = ""
+        numPersonString = ""
+        priceString = ""
 
-      /* createButton.setOnClickListener {
-            if (eventEditText.text.isNotEmpty() && whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && descriptionEditText.text.isNotEmpty()) {
-                eventString = eventEditText.text.toString()
-                whenString = whenEditText.text.toString()
-                locationString = locationEditText.text.toString()
-                descriptionString = descriptionEditText.text.toString()
+        progressBar.visibility = View.INVISIBLE
+
+        createButton.setOnClickListener {
+            if (eventEditText.text.isNotEmpty() && whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && timeEditText.text.isNotEmpty() && numPersonEditText.text.isNotEmpty() && priceEditText.text.isNotEmpty()) {
+                saveEventData()
             } else {
-                Toast.makeText(activity, "Fill in all fields", Toast.LENGTH_SHORT).show();
+                Toast.makeText(activity, "Fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-        }*/
+        }
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CreateFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CreateFragment().apply {
-                arguments = Bundle().apply {
-                }
+    private fun saveEventData() {
+        progressBar.visibility = View.VISIBLE
+
+        val db = Firebase.firestore
+        eventString = eventEditText.text.toString()
+        whenString = whenEditText.text.toString()
+        locationString = locationEditText.text.toString()
+        timeString = timeEditText.text.toString()
+        numPersonString = numPersonEditText.text.toString()
+        priceString = priceEditText.text.toString()
+
+        val eventData = hashMapOf(
+            "data" to whenString,
+            "luogo" to locationString,
+            "numPersone" to numPersonString,
+            "ora" to timeString,
+            "prezzo" to priceString,
+            "sport" to eventString
+        )
+
+        // Add a new document with a generated ID
+        db.collection("1")
+            .add(eventData)
+            .addOnSuccessListener { documentReference ->
+                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
             }
-    }
+            .addOnFailureListener { e ->
+                progressBar.visibility = View.GONE
+                Log.w(TAG, "Error adding document", e)
+            }
+        }
 }
