@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ProgressBar
-import android.widget.Toast
+import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.iplay.R
 import com.google.firebase.firestore.ktx.firestore
@@ -24,6 +21,8 @@ class CreateFragment : Fragment() {
     private lateinit var timeEditText: EditText
     private lateinit var priceEditText: EditText
     private lateinit var progressBar: ProgressBar
+    private lateinit var loadingTextView: TextView
+    private lateinit var okButton: Button
     private lateinit var createButton: Button
     private lateinit var eventString: String
     private lateinit var whenString: String
@@ -56,14 +55,14 @@ class CreateFragment : Fragment() {
         numPersonEditText = view.findViewById(R.id.numPersoneEditText)
         priceEditText = view.findViewById(R.id.priceEditText)
         progressBar = view.findViewById(R.id.progressBar)
+        loadingTextView = view.findViewById(R.id.loadingTextView)
+        okButton = view.findViewById(R.id.okButton)
         eventString = ""
         whenString = ""
         locationString = ""
         timeString = ""
         numPersonString = ""
         priceString = ""
-
-        progressBar.visibility = View.INVISIBLE
 
         createButton.setOnClickListener {
             if (eventEditText.text.isNotEmpty() && whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && timeEditText.text.isNotEmpty() && numPersonEditText.text.isNotEmpty() && priceEditText.text.isNotEmpty()) {
@@ -77,6 +76,8 @@ class CreateFragment : Fragment() {
 
     private fun saveEventData() {
         progressBar.visibility = View.VISIBLE
+        loadingTextView = "Loading"
+        loadingTextView.visibility = View.VISIBLE
 
         val db = Firebase.firestore
         eventString = eventEditText.text.toString()
@@ -95,7 +96,6 @@ class CreateFragment : Fragment() {
             "sport" to eventString
         )
 
-        // Add a new document with a generated ID
         db.collection("1")
             .add(eventData)
             .addOnSuccessListener { documentReference ->
