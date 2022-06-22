@@ -76,7 +76,6 @@ class CreateFragment : Fragment() {
 
     private fun saveEventData() {
         progressBar.visibility = View.VISIBLE
-        loadingTextView = "Loading"
         loadingTextView.visibility = View.VISIBLE
 
         val db = Firebase.firestore
