@@ -46,6 +46,14 @@
     <string name="basketball_image">Basketball</string>
     <string name="create_instructions">Create your event</string>
     <string name="title_explore">Explore the events near you</string>
+    <string-array name="spinnerSports">
+        <item>Calcetto</item>
+        <item>Pallacanestro</item>
+        <item>Tennis</item>
+        <item>Beach Volley</item>
+        <item>Padel</item>
+        <item>Golf</item>
+    </string-array>
 
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>

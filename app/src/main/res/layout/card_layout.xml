@@ -13,7 +13,7 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="5dp"
         android:layout_marginLeft="5dp"
-        >
+        android:clickable="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -22,6 +22,7 @@
             <ImageView
                 android:id="@+id/imageSport"
                 android:layout_width="100dp"
+                android:src="@drawable/logo_definitivo"
                 android:layout_height="100dp"
                 android:layout_gravity="start"
                 android:layout_marginStart="20dp"

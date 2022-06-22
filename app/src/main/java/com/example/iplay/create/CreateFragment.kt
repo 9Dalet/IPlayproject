@@ -13,6 +13,7 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import com.example.iplay.EmailAccess.EmailLogin
 import com.example.iplay.R
+import com.example.iplay.navbar.NavBarActivity
 import com.example.iplay.search.SearchFragment
 import com.google.android.gms.dynamic.SupportFragmentWrapper
 import com.google.firebase.firestore.ktx.firestore
@@ -20,7 +21,7 @@ import com.google.firebase.ktx.Firebase
 
 
 class CreateFragment : Fragment() {
-    private lateinit var eventEditText: EditText
+    private lateinit var spinnerSports: Spinner
     private lateinit var whenEditText: EditText
     private lateinit var locationEditText: EditText
     private lateinit var numPersonEditText: EditText
@@ -51,7 +52,7 @@ class CreateFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         createButton = view.findViewById(R.id.createButton)
-        eventEditText = view.findViewById(R.id.eventEditText)
+        spinnerSports = view.findViewById(R.id.sportsSpinner)
         whenEditText = view.findViewById(R.id.editTextDate)
         locationEditText = view.findViewById(R.id.locationEditText)
         timeEditText = view.findViewById(R.id.editTextTime)
@@ -64,8 +65,14 @@ class CreateFragment : Fragment() {
         numPersonString = ""
         priceString = ""
 
+        ArrayAdapter.createFromResource(view.context, R.array.spinnerSports, android.R.layout.simple_dropdown_item_1line)
+            .also { adapter ->
+                adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
+                spinnerSports.adapter = adapter
+            }
+
         createButton.setOnClickListener {
-            if (eventEditText.text.isNotEmpty() && whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && timeEditText.text.isNotEmpty() && numPersonEditText.text.isNotEmpty() && priceEditText.text.isNotEmpty()) {
+            if (whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && timeEditText.text.isNotEmpty() && numPersonEditText.text.isNotEmpty() && priceEditText.text.isNotEmpty()) {
                 saveEventData()
                 newDialog()
             } else {
@@ -77,7 +84,6 @@ class CreateFragment : Fragment() {
 
     private fun saveEventData() {
         val db = Firebase.firestore
-        eventString = eventEditText.text.toString()
         whenString = whenEditText.text.toString()
         locationString = locationEditText.text.toString()
         timeString = timeEditText.text.toString()
@@ -104,7 +110,7 @@ class CreateFragment : Fragment() {
         }
 
     private fun newDialog() {
-        val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
+        val builder1: AlertDialog.Builder = AlertDialog.Builder(context, )
         builder1.setMessage("Evento creato correttamente")
         builder1.setCancelable(true)
 
@@ -114,14 +120,7 @@ class CreateFragment : Fragment() {
 
         builder1.setNegativeButton(
             "Continua",
-            DialogInterface.OnClickListener { dialog, id -> return@OnClickListener
-                eventString = ""
-                whenString = ""
-                locationString = ""
-                timeString = ""
-                numPersonString = ""
-                priceString = ""
-            })
+            DialogInterface.OnClickListener { dialog, id -> return@OnClickListener })
 
         val alert11: AlertDialog = builder1.create()
         alert11.show()

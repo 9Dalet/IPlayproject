@@ -30,18 +30,22 @@
                 android:id="@+id/eventTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="40dp"
                 android:text="@string/event_create"
                 android:textSize="24dp"
                 android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="@+id/eventEditText"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-            <EditText
-                android:id="@+id/eventEditText"
-                android:layout_width="350dp"
+            <Spinner
+                android:id="@+id/sportsSpinner"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:contextClickable="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/eventTextView" />
@@ -55,7 +59,7 @@
                 android:textSize="24dp"
                 android:textStyle="italic"
                 app:layout_constraintStart_toStartOf="@+id/editTextDate"
-                app:layout_constraintTop_toBottomOf="@+id/eventEditText" />
+                app:layout_constraintTop_toBottomOf="@+id/sportsSpinner" />
 
             <TextView
                 android:id="@+id/locationTextView"
