@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".search.SearchFragment"
-    android:background="@color/orange">
+    android:background="@drawable/background_gradient">
 
     <TextView
         android:id="@+id/textView9"
@@ -16,6 +16,7 @@
         android:text="@string/title_explore"
         android:textSize="30dp"
         android:textStyle="bold"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
