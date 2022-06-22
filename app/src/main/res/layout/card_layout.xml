@@ -40,6 +40,7 @@
                 android:layout_marginTop="20dp"
                 android:text="Nome luogo"
                 android:textSize="20dp"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/imageSport"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -50,6 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
+                android:textColor="@color/black"
                 android:text="Sport: "
                 app:layout_constraintStart_toEndOf="@+id/imageSport"
                 app:layout_constraintTop_toBottomOf="@+id/nameSport" />
@@ -61,6 +63,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
                 android:text="sport"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/nomeSport"
@@ -73,7 +76,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="4dp"
                 android:text="prenot"
-
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nameSport" />
 
@@ -84,6 +87,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="4dp"
                 android:text="Ora: "
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/prezzo"
                 app:layout_constraintTop_toBottomOf="@+id/giocatori" />
 
@@ -94,6 +98,7 @@
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="20dp"
                 android:text="Prezzo"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -104,6 +109,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:text="Giocatori: "
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/textView5"
                 app:layout_constraintTop_toBottomOf="@+id/nameSport" />
 
@@ -113,6 +119,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:text="Quando: "
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toStartOf="@+id/textView7"
                 app:layout_constraintHorizontal_bias="0.909"
                 app:layout_constraintStart_toEndOf="@+id/imageSport"
@@ -125,6 +132,7 @@
                 android:layout_marginStart="88dp"
                 android:layout_marginTop="12dp"
                 android:text="Data"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/imageSport"
                 app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -135,6 +143,7 @@
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="8dp"
                 android:text="Prezzo: "
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/imageSport"
                 app:layout_constraintTop_toBottomOf="@+id/quando" />
 
@@ -145,6 +154,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="8dp"
                 android:text="Ora"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toEndOf="@+id/textView8"
                 app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
