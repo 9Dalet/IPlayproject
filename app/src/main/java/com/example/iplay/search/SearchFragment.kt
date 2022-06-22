@@ -15,6 +15,7 @@ import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.load.model.MediaStoreFileLoader
 import com.bumptech.glide.module.AppGlideModule
 import com.example.iplay.R
+import com.example.iplay.detailFragment
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
@@ -49,6 +50,17 @@ class SearchFragment : Fragment() {
         image = view.findViewById(R.id.imageSport)
 
         sportsData()
+        recyclerView.setOnClickListener {
+            loadFragment(detailFragment())
+
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment){
+        val supportFragmentManager = parentFragmentManager
+        val transaction = supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_fragment, fragment)
+        transaction.commit()
     }
 
     private fun sportsData() {

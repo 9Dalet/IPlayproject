@@ -3,9 +3,14 @@ package com.example.iplay.navbar
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.iplay.R
+import com.example.iplay.create.CreateFragment
+import com.example.iplay.detailFragment
+import com.example.iplay.home.HomeFragment
+import com.example.iplay.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -17,10 +22,37 @@ class NavBarActivity : AppCompatActivity() {
         //Initialize the bottom navigation view
         //create bottom navigation view object
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-        val navController = findNavController(R.id.nav_fragment)
-        bottomNavigationView.setupWithNavController(navController)
+       // val navController = findNavController(R.id.nav_fragment)
+        //bottomNavigationView.setupWithNavController(navController)
+
+        loadFragment(HomeFragment())
+
+        bottomNavigationView.setOnItemSelectedListener {
+            when(it.itemId) {
+                R.id.homeFragment -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.searchFragment -> {
+                    loadFragment(SearchFragment())
+                    true
+                }
+                R.id.createFragment -> {
+                    loadFragment(CreateFragment())
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
 
 
+    }
+    private fun loadFragment(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_fragment, fragment)
+        transaction.commit()
     }
 }
 

@@ -16,40 +16,39 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
     class CustomViewHolder(val view: ViewGroup) : RecyclerView.ViewHolder(view)
 
 
-        override fun onCreateViewHolder(
-            parent: ViewGroup,
-            viewType: Int
-        ): CustomViewHolder {
-            val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.card_layout, parent, false) as ViewGroup
-            return CustomViewHolder(view)
-        }
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): CustomViewHolder {
+        val view = LayoutInflater.from(parent.context)
+            .inflate(R.layout.card_layout, parent, false) as ViewGroup
+        return CustomViewHolder(view)
+    }
 
-        override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
 
-            val event = sports[position]
+        val event = sports[position]
 
-            val luogoEvento = holder.view.findViewById<TextView>(R.id.nameSport)
-            luogoEvento.text = event.luogo
+        val luogoEvento = holder.view.findViewById<TextView>(R.id.nameSport)
+        luogoEvento.text = event.luogo
 
-            val numPersoneEvento = holder.view.findViewById<TextView>(R.id.textView5)
-            numPersoneEvento.text = event.numPersone
+        val numPersoneEvento = holder.view.findViewById<TextView>(R.id.textView5)
+        numPersoneEvento.text = event.numPersone
 
-            val dataEvento = holder.view.findViewById<TextView>(R.id.textView7)
-            dataEvento.text = event.data
+        val dataEvento = holder.view.findViewById<TextView>(R.id.textView7)
+        dataEvento.text = event.data
 
-            val oraEvento = holder.view.findViewById<TextView>(R.id.oraEvent)
-            oraEvento.text = event.ora
+        val oraEvento = holder.view.findViewById<TextView>(R.id.oraEvent)
+        oraEvento.text = event.ora
 
-            val prezzoEvento = holder.view.findViewById<TextView>(R.id.prezzo)
-            prezzoEvento.text = event.prezzo
+        val prezzoEvento = holder.view.findViewById<TextView>(R.id.prezzo)
+        prezzoEvento.text = event.prezzo
 
-            val sportEvento = holder.view.findViewById<TextView>(R.id.textView4)
-            sportEvento.text = event.sport
+        val sportEvento = holder.view.findViewById<TextView>(R.id.textView4)
+        sportEvento.text = event.sport
 
-            Glide.with(context)
-                .load(event.image)
-                .into(holder.view.findViewById(R.id.imageSport))
+//        val imageurl = holder.view.findViewById<ImageView>(R.id.imageSport)
+//        Glide.with(context).load(imageurl).into(imageurl)
 
 
 //        holder.view.setOnClickListener {
@@ -65,11 +64,11 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 //            //notifyItemRemoved(position)
 //            true
 //        }
-        }
+    }
 
-        override fun getItemCount() = sports.size
+    override fun getItemCount() = sports.size
 
-        /*
+    /*
      *
      *       Callback
      *
@@ -86,4 +85,4 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 //    fun setOnCallback(mItemClickListener: AdapterCallback) {
 //        this.mListener = mItemClickListener
 //    }
-    }
+}
