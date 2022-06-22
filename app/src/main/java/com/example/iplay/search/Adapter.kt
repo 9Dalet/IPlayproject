@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.iplay.R
+import com.example.iplay.detailFragment
 
 class Adapter(private val sports: ArrayList<SportEvent>, private val context: Context)
     : RecyclerView.Adapter<Adapter.CustomViewHolder>() {
@@ -47,6 +49,10 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
         val sportEvento = holder.view.findViewById<TextView>(R.id.textView4)
         sportEvento.text = event.sport
 
+        holder.view.setOnClickListener {
+            loadFragment(detailFragment())
+
+        }
 //        val imageurl = holder.view.findViewById<ImageView>(R.id.imageSport)
 //        Glide.with(context).load(imageurl).into(imageurl)
 
@@ -85,4 +91,11 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 //    fun setOnCallback(mItemClickListener: AdapterCallback) {
 //        this.mListener = mItemClickListener
 //    }
+}
+
+private fun loadFragment(fragment: Fragment){
+    val supportFragmentManager = fragment.parentFragmentManager
+    val transaction = supportFragmentManager.beginTransaction()
+        .replace(R.id.nav_fragment, fragment)
+    transaction.commit()
 }
