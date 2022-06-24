@@ -8,6 +8,10 @@
     tools:context=".search.SearchFragment"
     android:background="@drawable/background_gradient">
 
+    <include
+        layout="@layout/card_layout"
+        android:visibility="invisible"/>
+
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"

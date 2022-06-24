@@ -3,7 +3,6 @@ package com.example.iplay.create
 import android.app.AlertDialog
 import android.content.ContentValues.TAG
 import android.content.DialogInterface
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,11 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
-import com.example.iplay.EmailAccess.EmailLogin
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.iplay.R
-import com.example.iplay.navbar.NavBarActivity
-import com.example.iplay.search.SearchFragment
-import com.google.android.gms.dynamic.SupportFragmentWrapper
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -65,6 +62,9 @@ class CreateFragment : Fragment() {
         numPersonString = ""
         priceString = ""
 
+
+
+
         ArrayAdapter.createFromResource(view.context, R.array.spinnerSports, android.R.layout.simple_dropdown_item_1line)
             .also { adapter ->
                 adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
@@ -109,8 +109,18 @@ class CreateFragment : Fragment() {
             }
         }
 
+    private fun reloadFragment() {
+        // Reload current fragment
+        var frg: Fragment? = null
+        frg = requireFragmentManager().findFragmentByTag("tagFragmentCreate")
+        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
+        if (frg != null) {
+            ft.detach(frg).attach(frg).commit()
+        }
+    }
+
     private fun newDialog() {
-        val builder1: AlertDialog.Builder = AlertDialog.Builder(context, )
+        val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
         builder1.setMessage("Evento creato correttamente")
         builder1.setCancelable(true)
 
@@ -120,7 +130,7 @@ class CreateFragment : Fragment() {
 
         builder1.setNegativeButton(
             "Continua",
-            DialogInterface.OnClickListener { dialog, id -> return@OnClickListener })
+            DialogInterface.OnClickListener { dialog, id -> reloadFragment() })
 
         val alert11: AlertDialog = builder1.create()
         alert11.show()
