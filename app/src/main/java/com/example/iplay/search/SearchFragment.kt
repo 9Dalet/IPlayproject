@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.constraintlayout.core.state.Registry
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.Registry
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.load.model.MediaStoreFileLoader
 import com.bumptech.glide.module.AppGlideModule
@@ -21,14 +22,14 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import java.io.InputStream
+import java.lang.System.load
 
 
 class SearchFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
-    private val auth = FirebaseAuth.getInstance()
     private lateinit var storage: FirebaseStorage
     private val sports = ArrayList<SportEvent>()
-    private lateinit var image: ImageView
+    private lateinit var image: AppCompatImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,17 +78,16 @@ class SearchFragment : Fragment() {
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
                     // Create a reference with an initial file path and name
-                    //val image = storageRef.child("images/corsofrancia.png")
+                    val imageurl: StorageReference = storageRef.child("images/corsofrancia.png")
 
-
-                        addSports(luogo, numPersone, data, ora, prezzo, sport, image)
+                        addSports(luogo, numPersone, data, ora, prezzo, sport, imageurl)
                 }
                 loadRecyclerView()
             }
         }
     }
 
-    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: ImageView) {
+    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: StorageReference) {
         val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, image)
         sports.add(newAddSports)
     }
