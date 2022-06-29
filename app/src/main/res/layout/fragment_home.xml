@@ -31,18 +31,18 @@
                 tools:ignore="SpeakableTextPresentCheck"
                 tools:src="@drawable/background_home" />
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="50dp"
-                android:scaleType="fitCenter"
-                android:background="@drawable/ic_baseline_person_24"
-                android:adjustViewBounds="true"
-                android:src="@drawable/profile_shape"
+                android:layout_width="132dp"
+                android:layout_height="119dp"
+                android:layout_marginTop="104dp"
+                android:src="@drawable/ic_baseline_person_24"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.505"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/imageViewCopertina" />
 
             <Button
                 android:id="@+id/followersButton"
