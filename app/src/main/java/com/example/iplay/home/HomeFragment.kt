@@ -23,6 +23,9 @@ class HomeFragment : Fragment() {
     private lateinit var imageProfile: ImageView
     private var auth = FirebaseAuth.getInstance()
     private lateinit var logout : Button
+    private lateinit var instagram: ImageButton
+    private lateinit var facebook: ImageButton
+    private lateinit var youtube: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -42,17 +45,40 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         logout = view.findViewById(R.id.logOutButton)
-        logout.setOnClickListener {
+        imageProfile = view.findViewById(R.id.imageView)
+        instagram = view.findViewById(R.id.instagramButton)
+        facebook = view.findViewById(R.id.facebookButton)
+        youtube = view.findViewById(R.id.youtubeButton)
 
+        //collegamento pagina Instagram
+        instagram.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/its_ict_spotted/"))
+            startActivity(intent)
+        }
+
+        //collegamento video Facebook
+        facebook.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://fb.watch/dY0mIMCaHf/"))
+            startActivity(intent)
+        }
+
+        //collegamento video Youtube
+        youtube.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=dQw4w9WgXcQ"))
+            startActivity(intent)
+        }
+
+        //logout dall'applicazione
+        logout.setOnClickListener {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
             auth.signOut()
         }
 
-        imageProfile = view.findViewById(R.id.imageView)
+        //cambio immagine profilo dalla galleria
         imageProfile.setOnClickListener {
                 val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, 3)
+            startActivityForResult(intent, 3)
             }
     }
 
