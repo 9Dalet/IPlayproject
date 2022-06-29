@@ -30,10 +30,21 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
         holder.sportEvento.text = event.sport
 
         Glide.with(context).load(event.image).into(holder.imageurl)
+        holder.view.setOnClickListener { mListener?.selectItem(position) }
     }
 
     override fun getItemCount() = sports.size
 
+    interface AdapterCallback {
+        fun selectItem(position: Int)
+    }
+
+    private var mListener: AdapterCallback? = null
+
+    //mi serve se devo cliccare sulla card
+    fun setOnCallback(mItemClickListener: AdapterCallback) {
+        mListener = mItemClickListener
+    }
 }
 
 class CustomViewHolder(val view: ViewGroup) : RecyclerView.ViewHolder(view) {
@@ -47,14 +58,3 @@ class CustomViewHolder(val view: ViewGroup) : RecyclerView.ViewHolder(view) {
     val imageurl = view.findViewById<ImageView>(R.id.imageSport)
 }
 
-//    interface AdapterCallback {
-//        fun selectItem(position: Int)
-//        fun deleteItem(position: Int)
-//    }
-//
-//    private var mListener: AdapterCallback? = null
-//
-//    //mi serve se devo cliccare sulla card
-//    fun setOnCallback(mItemClickListener: AdapterCallback) {
-//        this.mListener = mItemClickListener
-//    }

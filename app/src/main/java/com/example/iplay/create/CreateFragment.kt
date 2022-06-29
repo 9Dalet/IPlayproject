@@ -12,6 +12,7 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.NavHostFragment
 import com.example.iplay.R
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -31,6 +32,7 @@ class CreateFragment : Fragment() {
     private lateinit var timeString: String
     private lateinit var numPersonString: String
     private lateinit var priceString: String
+    private lateinit var spinnerString: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -89,6 +91,7 @@ class CreateFragment : Fragment() {
         timeString = timeEditText.text.toString()
         numPersonString = numPersonEditText.text.toString()
         priceString = priceEditText.text.toString()
+        spinnerString = spinnerSports.selectedItem.toString()
 
         val eventData = hashMapOf(
             "data" to whenString,
@@ -96,7 +99,7 @@ class CreateFragment : Fragment() {
             "numPersone" to numPersonString,
             "ora" to timeString,
             "prezzo" to priceString,
-            "sport" to eventString
+            "sport" to spinnerString
         )
 
         db.collection("1")
@@ -110,14 +113,14 @@ class CreateFragment : Fragment() {
         }
 
     private fun reloadFragment() {
-        // Reload current fragment
-        var frg: Fragment? = null
-        frg = requireFragmentManager().findFragmentByTag("tagFragmentCreate")
-        val ft: FragmentTransaction = requireFragmentManager().beginTransaction()
-        if (frg != null) {
-            ft.detach(frg).attach(frg).commit()
+        // Ogni volta che si schiaccia il tasto continua i campi vengono
+        whenEditText.text.clear()
+        locationEditText.text.clear()
+        timeEditText.text.clear()
+        numPersonEditText.text.clear()
+        priceEditText.text.clear()
         }
-    }
+
 
     private fun newDialog() {
         val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
@@ -125,12 +128,8 @@ class CreateFragment : Fragment() {
         builder1.setCancelable(true)
 
         builder1.setPositiveButton(
-            "Cerca eventi",
-            DialogInterface.OnClickListener { dialog, id ->  return@OnClickListener})
-
-        builder1.setNegativeButton(
             "Continua",
-            DialogInterface.OnClickListener { dialog, id -> reloadFragment() })
+            DialogInterface.OnClickListener { dialog, id -> reloadFragment()})
 
         val alert11: AlertDialog = builder1.create()
         alert11.show()

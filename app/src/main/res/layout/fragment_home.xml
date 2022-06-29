@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".home.HomeFragment"
-    android:id="@+id/homepage"
+    android:id="@+id/homeFragment"
     android:background="@color/backGroundGrey">
 
     <ScrollView

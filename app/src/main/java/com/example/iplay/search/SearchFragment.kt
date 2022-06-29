@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iplay.R
@@ -39,18 +41,18 @@ class SearchFragment : Fragment() {
         image = view.findViewById(R.id.imageSport)
 
         sportsData()
-        recyclerView.setOnClickListener {
-            loadFragment(detailFragment())
+        //recyclerView.setOnClickListener {
+            //loadFragment(detailFragment())
 
-        }
+        //}
     }
 
-    private fun loadFragment(fragment: Fragment){
+    /*private fun loadFragment(fragment: Fragment){
         val supportFragmentManager = parentFragmentManager
         val transaction = supportFragmentManager.beginTransaction()
             .replace(R.id.nav_fragment, fragment)
         transaction.commit()
-    }
+    }*/
 
     private fun sportsData() {
         FirebaseFirestore.getInstance().collection("1").get().addOnCompleteListener {
@@ -75,7 +77,14 @@ class SearchFragment : Fragment() {
     }
 
     private fun loadRecyclerView() {
-        recyclerView.adapter = Adapter(sports, requireActivity())
+        val adapter = Adapter(sports, requireActivity())
+        adapter.setOnCallback(object : Adapter.AdapterCallback{
+            override fun selectItem(position: Int) {
+                findNavController().navigate(R.id.action_searchFragment_to_detailFragment)
+                //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
+            }
+        })
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
     }
 }
