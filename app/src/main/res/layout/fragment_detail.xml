@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".detailFragment"
     android:background="@color/backGroundGrey">
+
     <ImageButton
         android:id="@+id/imageViewCopertina"
         style="?android:attr/borderlessButtonStyle"
