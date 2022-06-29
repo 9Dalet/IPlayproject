@@ -31,16 +31,30 @@
                 tools:ignore="SpeakableTextPresentCheck"
                 tools:src="@drawable/background_home" />
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="50dp"
-                android:scaleType="fitCenter"
-                android:background="@drawable/ic_baseline_person_24"
-                android:adjustViewBounds="true"
-                android:src="@drawable/profile_shape"
+            <!--            <ImageView-->
+<!--                android:id="@+id/imageView"-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:layout_marginTop="50dp"-->
+<!--                android:scaleType="centerCrop"-->
+<!--                android:background="@drawable/ic_baseline_person_24"-->
+<!--                android:adjustViewBounds="false"-->
+<!--                android:src="@drawable/profile_shape"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="122dp"
+                android:layout_height="121dp"
+                android:layout_marginTop="104dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_baseline_person_24"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.512"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -67,7 +81,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
             <Button
                 android:id="@+id/followingButton"
@@ -301,7 +315,7 @@
                 android:layout_marginTop="28dp"
                 android:src="@drawable/ic_baseline_edit_24"
                 app:layout_constraintStart_toEndOf="@+id/textView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image"
                 tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
             <ImageView
