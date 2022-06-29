@@ -10,16 +10,9 @@ import com.bumptech.glide.Glide
 import com.example.iplay.R
 
 class Adapter(private val sports: ArrayList<SportEvent>, private val context: Context)
-    : RecyclerView.Adapter<Adapter.CustomViewHolder>() {
+    : RecyclerView.Adapter<CustomViewHolder>() {
 
-
-    class CustomViewHolder(val view: ViewGroup) : RecyclerView.ViewHolder(view)
-
-
-    override fun onCreateViewHolder(
-        parent: ViewGroup,
-        viewType: Int
-    ): CustomViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_layout, parent, false) as ViewGroup
         return CustomViewHolder(view)
@@ -29,50 +22,30 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 
         val event = sports[position]
 
-        val luogoEvento = holder.view.findViewById<TextView>(R.id.nameSport)
-        luogoEvento.text = event.luogo
+        holder.luogoEvento.text = event.luogo
+        holder.numPersoneEvento.text = event.numPersone
+        holder.dataEvento.text = event.data
+        holder.oraEvento.text = event.ora
+        holder.prezzoEvento.text = event.prezzo
+        holder.sportEvento.text = event.sport
 
-        val numPersoneEvento = holder.view.findViewById<TextView>(R.id.textView5)
-        numPersoneEvento.text = event.numPersone
-
-        val dataEvento = holder.view.findViewById<TextView>(R.id.textView7)
-        dataEvento.text = event.data
-
-        val oraEvento = holder.view.findViewById<TextView>(R.id.oraEvent)
-        oraEvento.text = event.ora
-
-        val prezzoEvento = holder.view.findViewById<TextView>(R.id.prezzo)
-        prezzoEvento.text = event.prezzo
-
-        val sportEvento = holder.view.findViewById<TextView>(R.id.textView4)
-        sportEvento.text = event.sport
-
-        val imageurl = holder.view.findViewById<ImageView>(R.id.imageSport)
-        Glide.with(context).load(imageurl).into(imageurl)
-
-
-//        holder.view.setOnClickListener {
-//            /*val intent = Intent(context, DetailActivity::class.java)
-//            intent.putExtra("name", product.name)
-//            context.startActivity(intent)*/
-//            mListener?.selectItem(position)
-//        }
-//        holder.view.setOnLongClickListener {
-//            //mListener?.deleteItem(position)
-//            products.removeAt(position)
-//            notifyDataSetChanged()
-//            //notifyItemRemoved(position)
-//            true
-//        }
+        Glide.with(context).load(event.image).into(holder.imageurl)
     }
 
     override fun getItemCount() = sports.size
 
-    /*
-     *
-     *       Callback
-     *
-     * */
+}
+
+class CustomViewHolder(val view: ViewGroup) : RecyclerView.ViewHolder(view) {
+
+    val luogoEvento = view.findViewById<TextView>(R.id.nameSport)
+    val numPersoneEvento = view.findViewById<TextView>(R.id.textView5)
+    val dataEvento = view.findViewById<TextView>(R.id.textView7)
+    val oraEvento = view.findViewById<TextView>(R.id.oraEvent)
+    val prezzoEvento = view.findViewById<TextView>(R.id.prezzo)
+    val sportEvento = view.findViewById<TextView>(R.id.textView4)
+    val imageurl = view.findViewById<ImageView>(R.id.imageSport)
+}
 
 //    interface AdapterCallback {
 //        fun selectItem(position: Int)
@@ -85,4 +58,3 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 //    fun setOnCallback(mItemClickListener: AdapterCallback) {
 //        this.mListener = mItemClickListener
 //    }
-}
