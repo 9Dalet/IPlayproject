@@ -68,15 +68,18 @@ class RegistratiActivity : AppCompatActivity() {
                             "surname" to surnameEditText.text.toString()
                         )
                         if (user != null) {
-                            db.collection("userData").add(userData)
+                            db.collection("userData").document(user.uid).set(userData)
                                 .addOnCompleteListener {
-                                    uploadUserData()
                                     val intent = Intent(this, NavBarActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 }
                                 .addOnFailureListener {
-                                    Toast.makeText(baseContext, "Authentication failed.", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        baseContext,
+                                        "Authentication failed.",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
 
                         }
@@ -102,19 +105,4 @@ class RegistratiActivity : AppCompatActivity() {
     private fun updateUI(currentUser: FirebaseUser?) {
     }
 
-    private fun uploadUserData() {
-        val db = Firebase.firestore
-        val userData = hashMapOf(
-            "name" to nameEditText.text.toString(),
-            "surname" to surnameEditText.text.toString()
-        )
-        db.collection("userData")
-            .add(userData)
-            .addOnSuccessListener { documentReference ->
-                Log.d(TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
-            }
-            .addOnFailureListener { e ->
-                Log.w(TAG, "Error adding document", e)
-            }
-    }
-    }
+}

@@ -12,17 +12,22 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 import com.example.iplay.R
 import com.example.iplay.login.LoginActivity
 import com.example.iplay.navbar.NavBarActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeFragment : Fragment() {
 
     private lateinit var imageProfile: ImageView
     private var auth = FirebaseAuth.getInstance()
     private lateinit var logout : Button
+    private lateinit var nicknameUser: TextView
+    private lateinit var nicknameString: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -41,9 +46,16 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val user = auth.currentUser
+        nicknameUser = view.findViewById(R.id.userTextView)
+        nicknameString = ""
+
+        if (user != null) {
+            loadUserdata(user)
+        }
+
         logout = view.findViewById(R.id.logOutButton)
         logout.setOnClickListener {
-
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
             auth.signOut()
@@ -54,6 +66,18 @@ class HomeFragment : Fragment() {
                 val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, 3)
             }
+    }
+
+    private fun loadUserdata(user: FirebaseUser) {
+        nicknameString = nicknameUser.text.toString()
+        FirebaseFirestore.getInstance().collection("userData").document(user.uid).get().addOnCompleteListener {
+            if (it.isSuccessful) {
+                val name: String = it.result.data?.get("name").toString()
+                val surname: String = it.result.data?.get("surname").toString()
+                nicknameString = name + surname
+            }
+
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
