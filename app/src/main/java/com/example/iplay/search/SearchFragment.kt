@@ -1,12 +1,12 @@
 package com.example.iplay.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.iplay.R
@@ -77,7 +77,8 @@ class SearchFragment : Fragment() {
         val adapter = Adapter(sports, requireActivity())
         adapter.setOnCallback(object : Adapter.AdapterCallback{
             override fun selectItem(position: Int) {
-                findNavController().navigate(R.id.action_searchFragment_to_detailFragment)
+                val intent = Intent(activity, SearchFragment::class.java)
+                startActivity(intent)
                 //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
             }
         })
