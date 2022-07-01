@@ -9,7 +9,9 @@ import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.iplay.DetailActivity.DeatilActivity
 import com.example.iplay.R
+import com.google.android.gms.location.DetectedActivity
 import com.google.firebase.firestore.FirebaseFirestore
 
 
@@ -77,8 +79,16 @@ class SearchFragment : Fragment() {
         val adapter = Adapter(sports, requireActivity())
         adapter.setOnCallback(object : Adapter.AdapterCallback{
             override fun selectItem(position: Int) {
-                val intent = Intent(activity, SearchFragment::class.java)
-                startActivity(intent)
+
+
+                    val intent = Intent(this@SearchFragment .requireContext(), DeatilActivity::class.java)
+                    startActivity(intent)
+                
+              //  val intent = Intent(activity, requireActivity()::class.java)
+               // activity?.startActivity(intent)
+                //startActivity(intent)
+               // val intent = Intent(activity, DetailActivity::class.java)
+               // startActivity(intent)
                 //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
             }
         })

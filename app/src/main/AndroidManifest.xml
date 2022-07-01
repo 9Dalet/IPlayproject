@@ -16,7 +16,7 @@
         android:theme="@style/Theme.IPlay"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DeatilActivity"
+            android:name=".DetailActivity.DeatilActivity"
             android:exported="false" />
         <activity
             android:name=".EmailAccess.EmailLogin"
