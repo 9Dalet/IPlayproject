@@ -66,13 +66,15 @@ class CreateFragment : Fragment() {
 
 
 
-
+        //visualizzazione dello spinner (è un array di stringhe)
         ArrayAdapter.createFromResource(view.context, R.array.spinnerSports, android.R.layout.simple_dropdown_item_1line)
             .also { adapter ->
                 adapter.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
                 spinnerSports.adapter = adapter
             }
 
+        //quando si schiaccia il button 'create' controlla se le EditText sono piene, poi chiama la funzione saveEventData e poi
+        //appare il dialog
         createButton.setOnClickListener {
             if (whenEditText.text.isNotEmpty() && locationEditText.text.isNotEmpty() && timeEditText.text.isNotEmpty() && numPersonEditText.text.isNotEmpty() && priceEditText.text.isNotEmpty()) {
                 saveEventData()
@@ -84,8 +86,11 @@ class CreateFragment : Fragment() {
         }
     }
 
+    //carica i dati inseriti su Firebase
     private fun saveEventData() {
         val db = Firebase.firestore
+
+        //converte le EditText in stringhe
         whenString = whenEditText.text.toString()
         locationString = locationEditText.text.toString()
         timeString = timeEditText.text.toString()
@@ -93,6 +98,7 @@ class CreateFragment : Fragment() {
         priceString = priceEditText.text.toString()
         spinnerString = spinnerSports.selectedItem.toString()
 
+        //qua diciamo con che voce salvare le diverse stringhe nel database
         val eventData = hashMapOf(
             "data" to whenString,
             "luogo" to locationString,
@@ -102,6 +108,7 @@ class CreateFragment : Fragment() {
             "sport" to spinnerString
         )
 
+        //qua diciamo a quale raccolta devono essere aggiunti i nostri campi
         db.collection("1")
             .add(eventData)
             .addOnSuccessListener { documentReference ->
@@ -113,7 +120,7 @@ class CreateFragment : Fragment() {
         }
 
     private fun reloadFragment() {
-        // Ogni volta che si schiaccia il tasto continua i campi vengono
+        // Ogni volta che si schiaccia il button continua i campi vengono
         whenEditText.text.clear()
         locationEditText.text.clear()
         timeEditText.text.clear()
@@ -121,12 +128,13 @@ class CreateFragment : Fragment() {
         priceEditText.text.clear()
         }
 
-
+    //Dialogo che appare quando si schiaccia il button create
     private fun newDialog() {
         val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
         builder1.setMessage("Evento creato correttamente")
         builder1.setCancelable(true)
 
+        //Richiamiamo la funzione reloadFragment alla pressione del button 'Continua'
         builder1.setPositiveButton(
             "Continua",
             DialogInterface.OnClickListener { dialog, id -> reloadFragment()})

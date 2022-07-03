@@ -51,16 +51,20 @@ class RegistratiActivity : AppCompatActivity() {
         val db = Firebase.firestore
 
 
+        //se si schiaccia il button 'registrati' si attiva la procedura di controllo dei campi
         button.setOnClickListener {
             if (nameEditText.text.isNotEmpty() || surnameEditText.text.isNotEmpty() || emptyPassword.text.isNotEmpty() || (emptyEmail.text.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(
                     email
                 ).matches())
             ) {
+                //convertiamo il stringhe i campi
                 name = nameEditText.text.toString()
                 surname = surnameEditText.text.toString()
                 email = emptyEmail.text.toString()
                 password = emptyPassword.text.toString()
+                //usiamo il metodo createUserWithEmailAndPassword per fares la registrazione
                 auth.createUserWithEmailAndPassword(email, password)
+                        //se ha successo salviamo tutto nel database con l'identificativo uguale sia per il firestore sia per l'authentication
                     .addOnCompleteListener(this) {
                         val user = auth.currentUser
                         val userData = hashMapOf(
@@ -74,6 +78,7 @@ class RegistratiActivity : AppCompatActivity() {
                                     startActivity(intent)
                                     finish()
                                 }
+                                    //se fallisce compare un toast
                                 .addOnFailureListener {
                                     Toast.makeText(
                                         baseContext,

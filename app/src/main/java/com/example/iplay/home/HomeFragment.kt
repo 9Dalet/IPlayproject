@@ -55,6 +55,8 @@ class HomeFragment : Fragment() {
         }
 
         logout = view.findViewById(R.id.logOutButton)
+
+        //se schiacciamo il button 'logout' ci riporta alla LoginActivity e l'utente non è più salvato
         logout.setOnClickListener {
             val intent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(intent)
@@ -62,6 +64,8 @@ class HomeFragment : Fragment() {
         }
 
         imageProfile = view.findViewById(R.id.imageView)
+
+        //per cambiare immagine profilo dalla galleria
         imageProfile.setOnClickListener {
                 val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, 3)
@@ -80,6 +84,7 @@ class HomeFragment : Fragment() {
         }
     }
 
+    //si attiva quando si deve scegliere la foto profilo dalla galleria, e la salva al posto di quella predefinita
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == RESULT_OK && data != null) {

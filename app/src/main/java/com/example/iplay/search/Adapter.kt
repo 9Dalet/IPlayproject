@@ -12,12 +12,14 @@ import com.example.iplay.R
 class Adapter(private val sports: ArrayList<SportEvent>, private val context: Context)
     : RecyclerView.Adapter<CustomViewHolder>() {
 
+    //viene chiamata per avviare una nuova vista
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.card_layout, parent, false) as ViewGroup
         return CustomViewHolder(view)
     }
 
+    //viene chiamato per visualizzare gli elementi nella posizione precisa
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
 
         val event = sports[position]
@@ -41,7 +43,7 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 
     private var mListener: AdapterCallback? = null
 
-    //mi serve se devo cliccare sulla card
+    //viene richiamato quando schiaccio una card
     fun setOnCallback(mItemClickListener: AdapterCallback) {
         mListener = mItemClickListener
     }
@@ -49,6 +51,7 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
 
 class CustomViewHolder(val view: ViewGroup) : RecyclerView.ViewHolder(view) {
 
+    //trovo gli id delle cose che ci sono nell'xml della card
     val luogoEvento = view.findViewById<TextView>(R.id.nameSport)
     val numPersoneEvento = view.findViewById<TextView>(R.id.textView5)
     val dataEvento = view.findViewById<TextView>(R.id.textView7)

@@ -40,19 +40,9 @@ class SearchFragment : Fragment() {
         image = view.findViewById(R.id.imageSport)
 
         sportsData()
-        //recyclerView.setOnClickListener {
-            //loadFragment(detailFragment())
-
-        //}
     }
 
-    /*private fun loadFragment(fragment: Fragment){
-        val supportFragmentManager = parentFragmentManager
-        val transaction = supportFragmentManager.beginTransaction()
-            .replace(R.id.nav_fragment, fragment)
-        transaction.commit()
-    }*/
-
+    //prende i dati da Firebase
     private fun sportsData() {
         FirebaseFirestore.getInstance().collection("1").get().addOnCompleteListener {
                 for (document in it.result) {
@@ -64,7 +54,9 @@ class SearchFragment : Fragment() {
                     val sport: String = document.data["sport"].toString()
                     val newImage = document.data["image"].toString()
 
+                    //richiama la funzione addSports
                     addSports(luogo, numPersone, data, ora, prezzo, sport, newImage)
+                    //richiama la funzione loadRecyclerView
                     loadRecyclerView()
             }
         }
@@ -72,24 +64,18 @@ class SearchFragment : Fragment() {
 
     private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: String) {
         val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, image)
+        //sports: array di SportEvent
         sports.add(newAddSports)
     }
 
+    //carica la recyclerView con i diversi dati per ogni card
     private fun loadRecyclerView() {
         val adapter = Adapter(sports, requireActivity())
+        //se schiacciamo una card questo va a richiamare il callback nell'adapter
         adapter.setOnCallback(object : Adapter.AdapterCallback{
             override fun selectItem(position: Int) {
-
-
                     val intent = Intent(this@SearchFragment .requireContext(), DeatilActivity::class.java)
                     startActivity(intent)
-                
-              //  val intent = Intent(activity, requireActivity()::class.java)
-               // activity?.startActivity(intent)
-                //startActivity(intent)
-               // val intent = Intent(activity, DetailActivity::class.java)
-               // startActivity(intent)
-                //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
             }
         })
         recyclerView.adapter = adapter
