@@ -28,6 +28,9 @@ class HomeFragment : Fragment() {
     private lateinit var logout : Button
     private lateinit var nicknameUser: TextView
     private lateinit var nicknameString: String
+    private lateinit var instagram: ImageButton
+    private lateinit var facebook: ImageButton
+    private lateinit var youtube: ImageButton
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -49,6 +52,9 @@ class HomeFragment : Fragment() {
         val user = auth.currentUser
         nicknameUser = view.findViewById(R.id.userTextView)
         nicknameString = ""
+        instagram = view.findViewById(R.id.instagramButton)
+        facebook = view.findViewById(R.id.facebookButton)
+        youtube = view.findViewById(R.id.youtubeButton)
 
         if (user != null) {
             loadUserdata(user)
@@ -70,6 +76,21 @@ class HomeFragment : Fragment() {
                 val intent = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, 3)
             }
+
+        instagram.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/its_ict_spotted/"))
+            startActivity(intent)
+        }
+
+        facebook.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/MilesDavis"))
+            startActivity(intent)
+        }
+
+        youtube.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=A28hMd9uaOg&t=6s"))
+            startActivity(intent)
+        }
     }
 
     private fun loadUserdata(user: FirebaseUser) {
@@ -79,6 +100,8 @@ class HomeFragment : Fragment() {
                 val name: String = it.result.data?.get("name").toString()
                 val surname: String = it.result.data?.get("surname").toString()
                 nicknameString = name + surname
+
+                //manca il pezzo per far apparire lo stesso nome nella home
             }
 
         }
