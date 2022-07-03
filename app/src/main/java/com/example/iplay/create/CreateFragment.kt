@@ -33,6 +33,7 @@ class CreateFragment : Fragment() {
     private lateinit var numPersonString: String
     private lateinit var priceString: String
     private lateinit var spinnerString: String
+    private lateinit var standardImage: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,6 +64,7 @@ class CreateFragment : Fragment() {
         timeString = ""
         numPersonString = ""
         priceString = ""
+        standardImage = "https://www.geekslab.it/wp-content/uploads/2021/05/problema-webcam-lenovo.jpg"
 
 
 
@@ -105,7 +107,8 @@ class CreateFragment : Fragment() {
             "numPersone" to numPersonString,
             "ora" to timeString,
             "prezzo" to priceString,
-            "sport" to spinnerString
+            "sport" to spinnerString,
+            "image" to standardImage
         )
 
         //qua diciamo a quale raccolta devono essere aggiunti i nostri campi

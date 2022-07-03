@@ -95,15 +95,16 @@ class HomeFragment : Fragment() {
 
     private fun loadUserdata(user: FirebaseUser) {
         nicknameString = nicknameUser.text.toString()
-        FirebaseFirestore.getInstance().collection("userData").document(user.uid).get().addOnCompleteListener {
+        val db = FirebaseFirestore.getInstance();
+        db.collection("userData").document(user.uid).get().addOnCompleteListener {
             if (it.isSuccessful) {
                 val name: String = it.result.data?.get("name").toString()
                 val surname: String = it.result.data?.get("surname").toString()
-                nicknameString = name + surname
+                nicknameString = name + " " + surname
+                nicknameUser.append(nicknameString)
 
                 //manca il pezzo per far apparire lo stesso nome nella home
             }
-
         }
     }
 
