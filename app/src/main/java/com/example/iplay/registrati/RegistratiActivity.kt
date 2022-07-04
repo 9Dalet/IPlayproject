@@ -57,12 +57,12 @@ class RegistratiActivity : AppCompatActivity() {
                     email
                 ).matches())
             ) {
-                //convertiamo il stringhe i campi
+                //convertiamo in stringhe i campi dell'editText
                 name = nameEditText.text.toString()
                 surname = surnameEditText.text.toString()
                 email = emptyEmail.text.toString()
                 password = emptyPassword.text.toString()
-                //usiamo il metodo createUserWithEmailAndPassword per fares la registrazione
+                //usiamo il metodo createUserWithEmailAndPassword per fare la registrazione
                 auth.createUserWithEmailAndPassword(email, password)
                         //se ha successo salviamo tutto nel database con l'identificativo uguale sia per il firestore sia per l'authentication
                     .addOnCompleteListener(this) {

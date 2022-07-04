@@ -139,7 +139,7 @@ class CreateFragment : Fragment() {
 
         //Richiamiamo la funzione reloadFragment alla pressione del button 'Continua'
         builder1.setPositiveButton(
-            "Continua",
+            "Continue",
             DialogInterface.OnClickListener { dialog, id -> reloadFragment()})
 
         val alert11: AlertDialog = builder1.create()
