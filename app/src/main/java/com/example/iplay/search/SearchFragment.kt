@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -40,9 +41,19 @@ class SearchFragment : Fragment() {
         image = view.findViewById(R.id.imageSport)
 
         sportsData()
+        //recyclerView.setOnClickListener {
+            //loadFragment(detailFragment())
+
+        //}
     }
 
-    //prende i dati da Firebase
+    /*private fun loadFragment(fragment: Fragment){
+        val supportFragmentManager = parentFragmentManager
+        val transaction = supportFragmentManager.beginTransaction()
+            .replace(R.id.nav_fragment, fragment)
+        transaction.commit()
+    }*/
+
     private fun sportsData() {
         FirebaseFirestore.getInstance().collection("1").get().addOnCompleteListener {
                 for (document in it.result) {
@@ -53,29 +64,40 @@ class SearchFragment : Fragment() {
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
                     val newImage = document.data["image"].toString()
+                    //Toast.makeText(requireContext(),document.id,Toast.LENGTH_SHORT).show()
 
-                    //richiama la funzione addSports
-                    addSports(luogo, numPersone, data, ora, prezzo, sport, newImage)
-                    //richiama la funzione loadRecyclerView
+                    //passaggio di id del documento da firebase
+                    val idDoc = document.id
+
+                    addSports(luogo, numPersone, data, ora, prezzo, sport, newImage,idDoc)
                     loadRecyclerView()
             }
         }
     }
 
-    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: String) {
-        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, image)
-        //sports: array di SportEvent
+    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: String, idDoc:String) {
+        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, image, idDoc)
         sports.add(newAddSports)
     }
 
-    //carica la recyclerView con i diversi dati per ogni card
     private fun loadRecyclerView() {
         val adapter = Adapter(sports, requireActivity())
-        //se schiacciamo una card questo va a richiamare il callback nell'adapter
         adapter.setOnCallback(object : Adapter.AdapterCallback{
-            override fun selectItem(position: Int) {
+            override fun selectItem(idDoc: String) {
+
+
+
+                    //passaggio di parametro di idDoc al detailActivity
                     val intent = Intent(this@SearchFragment .requireContext(), DeatilActivity::class.java)
+                    intent.putExtra("idDoc",idDoc)
                     startActivity(intent)
+                
+              //  val intent = Intent(activity, requireActivity()::class.java)
+               // activity?.startActivity(intent)
+                //startActivity(intent)
+               // val intent = Intent(activity, DetailActivity::class.java)
+               // startActivity(intent)
+                //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
             }
         })
         recyclerView.adapter = adapter

@@ -30,15 +30,16 @@ class Adapter(private val sports: ArrayList<SportEvent>, private val context: Co
         holder.oraEvento.text = event.ora
         holder.prezzoEvento.text = event.prezzo
         holder.sportEvento.text = event.sport
+        val idDoc = event.idDoc
 
         Glide.with(context).load(event.image).into(holder.imageurl)
-        holder.view.setOnClickListener { mListener?.selectItem(position) }
+        holder.view.setOnClickListener { mListener?.selectItem(idDoc) }
     }
 
     override fun getItemCount() = sports.size
 
     interface AdapterCallback {
-        fun selectItem(position: Int)
+        fun selectItem(idDoc:String)
     }
 
     private var mListener: AdapterCallback? = null
