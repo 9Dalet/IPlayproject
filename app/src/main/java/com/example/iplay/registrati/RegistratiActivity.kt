@@ -89,6 +89,12 @@ class RegistratiActivity : AppCompatActivity() {
 
                         }
                     }
+            } else {
+                Toast.makeText(
+                    baseContext,
+                    "Fill in all fields",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
