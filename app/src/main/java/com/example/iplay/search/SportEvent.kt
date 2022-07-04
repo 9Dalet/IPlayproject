@@ -16,7 +16,8 @@ class SportEvent(
     var ora: String,
     var prezzo: String,
     var sport: String,
-    var image: String
+    var image: String,
+    var idDoc: String
 ) {
 }
 
