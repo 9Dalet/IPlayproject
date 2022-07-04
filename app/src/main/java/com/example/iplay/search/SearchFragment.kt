@@ -53,7 +53,6 @@ class SearchFragment : Fragment() {
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
                     val newImage = document.data["image"].toString()
-                    //Toast.makeText(requireContext(),document.id,Toast.LENGTH_SHORT).show()
 
                     //passaggio di id del documento da firebase
                     val idDoc = document.id
@@ -71,7 +70,7 @@ class SearchFragment : Fragment() {
 
     private fun loadRecyclerView() {
         val adapter = Adapter(sports, requireActivity())
-        adapter.setOnCallback(object : Adapter.AdapterCallback{
+        adapter.setOnCallback(object : Adapter.AdapterCallback {
             override fun selectItem(idDoc: String) {
 
                     //passaggio di parametro di idDoc al detailActivity
