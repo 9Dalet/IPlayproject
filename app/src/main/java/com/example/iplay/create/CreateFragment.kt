@@ -134,7 +134,7 @@ class CreateFragment : Fragment() {
     //Dialogo che appare quando si schiaccia il button create
     private fun newDialog() {
         val builder1: AlertDialog.Builder = AlertDialog.Builder(context)
-        builder1.setMessage("Evento creato correttamente")
+        builder1.setMessage("Event created successfully")
         builder1.setCancelable(true)
 
         //Richiamiamo la funzione reloadFragment alla pressione del button 'Continua'

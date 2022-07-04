@@ -41,18 +41,7 @@ class SearchFragment : Fragment() {
         image = view.findViewById(R.id.imageSport)
 
         sportsData()
-        //recyclerView.setOnClickListener {
-            //loadFragment(detailFragment())
-
-        //}
     }
-
-    /*private fun loadFragment(fragment: Fragment){
-        val supportFragmentManager = parentFragmentManager
-        val transaction = supportFragmentManager.beginTransaction()
-            .replace(R.id.nav_fragment, fragment)
-        transaction.commit()
-    }*/
 
     private fun sportsData() {
         FirebaseFirestore.getInstance().collection("1").get().addOnCompleteListener {
@@ -85,19 +74,10 @@ class SearchFragment : Fragment() {
         adapter.setOnCallback(object : Adapter.AdapterCallback{
             override fun selectItem(idDoc: String) {
 
-
-
                     //passaggio di parametro di idDoc al detailActivity
                     val intent = Intent(this@SearchFragment .requireContext(), DeatilActivity::class.java)
                     intent.putExtra("idDoc",idDoc)
                     startActivity(intent)
-                
-              //  val intent = Intent(activity, requireActivity()::class.java)
-               // activity?.startActivity(intent)
-                //startActivity(intent)
-               // val intent = Intent(activity, DetailActivity::class.java)
-               // startActivity(intent)
-                //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
             }
         })
         recyclerView.adapter = adapter
