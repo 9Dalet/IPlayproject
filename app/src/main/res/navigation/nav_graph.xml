@@ -10,35 +10,17 @@
         android:name="com.example.iplay.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_createFragment"
-            app:destination="@id/createFragment" />
     </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.example.iplay.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
-        <action
-            android:id="@+id/action_searchFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_searchFragment_to_createFragment"
-            app:destination="@id/createFragment" />
     </fragment>
     <fragment
         android:id="@+id/createFragment"
         android:name="com.example.iplay.create.CreateFragment"
         android:label="fragment_create"
         tools:layout="@layout/fragment_create" >
-        <action
-            android:id="@+id/action_createFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-        <action
-            android:id="@+id/action_createFragment_to_searchFragment"
-            app:destination="@id/searchFragment" />
     </fragment>
 </navigation>

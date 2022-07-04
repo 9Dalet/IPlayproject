@@ -1,17 +1,19 @@
 package com.example.iplay.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.iplay.DetailActivity.DeatilActivity
 import com.example.iplay.R
-import com.example.iplay.detailFragment
+import com.google.android.gms.location.DetectedActivity
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.storage.FirebaseStorage
 
 
 class SearchFragment : Fragment() {
@@ -39,18 +41,18 @@ class SearchFragment : Fragment() {
         image = view.findViewById(R.id.imageSport)
 
         sportsData()
-        recyclerView.setOnClickListener {
-            loadFragment(detailFragment())
+        //recyclerView.setOnClickListener {
+            //loadFragment(detailFragment())
 
-        }
+        //}
     }
 
-    private fun loadFragment(fragment: Fragment){
+    /*private fun loadFragment(fragment: Fragment){
         val supportFragmentManager = parentFragmentManager
         val transaction = supportFragmentManager.beginTransaction()
             .replace(R.id.nav_fragment, fragment)
         transaction.commit()
-    }
+    }*/
 
     private fun sportsData() {
         FirebaseFirestore.getInstance().collection("1").get().addOnCompleteListener {
@@ -62,20 +64,43 @@ class SearchFragment : Fragment() {
                     val prezzo: String = document.data["prezzo"].toString()
                     val sport: String = document.data["sport"].toString()
                     val newImage = document.data["image"].toString()
+                    //Toast.makeText(requireContext(),document.id,Toast.LENGTH_SHORT).show()
 
-                    addSports(luogo, numPersone, data, ora, prezzo, sport, newImage)
+                    //passaggio di id del documento da firebase
+                    val idDoc = document.id
+
+                    addSports(luogo, numPersone, data, ora, prezzo, sport, newImage,idDoc)
                     loadRecyclerView()
             }
         }
     }
 
-    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: String) {
-        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, image)
+    private fun addSports(luogo: String, numPersone: String, oraData: String, prezzo: String, ora: String, sport: String, image: String, idDoc:String) {
+        val newAddSports = SportEvent(luogo, numPersone, oraData, ora, prezzo, sport, image, idDoc)
         sports.add(newAddSports)
     }
 
     private fun loadRecyclerView() {
-        recyclerView.adapter = Adapter(sports, requireActivity())
+        val adapter = Adapter(sports, requireActivity())
+        adapter.setOnCallback(object : Adapter.AdapterCallback{
+            override fun selectItem(idDoc: String) {
+
+
+
+                    //passaggio di parametro di idDoc al detailActivity
+                    val intent = Intent(this@SearchFragment .requireContext(), DeatilActivity::class.java)
+                    intent.putExtra("idDoc",idDoc)
+                    startActivity(intent)
+                
+              //  val intent = Intent(activity, requireActivity()::class.java)
+               // activity?.startActivity(intent)
+                //startActivity(intent)
+               // val intent = Intent(activity, DetailActivity::class.java)
+               // startActivity(intent)
+                //NavHostFragment.findNavController(this@SearchFragment).navigate(R.id.action_searchFragment_to_detailFragment)
+            }
+        })
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
     }
 }

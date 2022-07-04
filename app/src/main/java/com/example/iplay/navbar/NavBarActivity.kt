@@ -1,14 +1,10 @@
 package com.example.iplay.navbar
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
 import com.example.iplay.R
 import com.example.iplay.create.CreateFragment
-import com.example.iplay.detailFragment
 import com.example.iplay.home.HomeFragment
 import com.example.iplay.search.SearchFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView

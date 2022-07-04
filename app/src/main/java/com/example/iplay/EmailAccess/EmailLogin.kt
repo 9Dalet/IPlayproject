@@ -59,17 +59,6 @@ class EmailLogin : AppCompatActivity() {
         }
     }
 
-   /* override fun onStart() {
-        super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
-        val currentUser = auth.currentUser
-        if (currentUser != null) {
-           // val intent = Intent(this, NavBarActivity::class.java)
-            //finish()
-            reload()
-        }
-    }*/
-
     override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -81,25 +70,12 @@ class EmailLogin : AppCompatActivity() {
         }
     }
 
-//    private fun getUserProfile() {
-//        val user = Firebase.auth.currentUser
-//        user?.let {
-//            val name = user.displayName
-//            val email = user.email
-//            val photoUrl = user.photoUrl
-//
-//            val emailVerified = user.isEmailVerified
-//
-//            // The user's ID, unique to the Firebase project. Do NOT use this value to
-//            // authenticate with your backend server, if you have one. Use
-//            // FirebaseUser.getToken() instead.
-//            val uid = user.uid
-//        }
-//    }
-
+    //funzione per il login
     private fun signIn(email: String, password: String) {
 
+        //usiamo il metodo signInWithEmailAndPassword per fare il login
         auth.signInWithEmailAndPassword(email, password)
+                //se ha successo ci apre la home e l'utente resta salvato
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
@@ -111,7 +87,7 @@ class EmailLogin : AppCompatActivity() {
                     finish()
 
                 } else {
-                    // If sign in fails, display a message to the user.
+                    //se il login fallisce ci viene fuori un toast
                     Log.w("bbbbb", "signInWithEmail:failure", task.exception)
                     Toast.makeText(
                         baseContext, "Authentication failed.",
