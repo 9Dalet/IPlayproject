@@ -40,6 +40,7 @@ class NavBarActivity : AppCompatActivity() {
                 else -> {
                     false
                 }
+
             }
         }
 

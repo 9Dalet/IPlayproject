@@ -1,11 +1,12 @@
 package com.example.iplay.DetailActivity
 
-import android.app.AlertDialog
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat.startActivity
 import com.bumptech.glide.Glide
 import com.example.iplay.R
 import com.example.iplay.navbar.NavBarActivity
@@ -16,8 +17,7 @@ import com.google.firebase.ktx.Firebase
 class DeatilActivity : AppCompatActivity() {
 
     private lateinit var backButton: ImageButton
-    private lateinit var prenota: Button
-    private lateinit var luogo : TextView
+    private lateinit var luogo: TextView
     private lateinit var sport: TextView
     private lateinit var data: TextView
     private lateinit var numPersone: TextView
@@ -25,6 +25,7 @@ class DeatilActivity : AppCompatActivity() {
     private lateinit var image: ImageView
     private lateinit var prezzo: TextView
     private lateinit var descrizione: TextView
+    private lateinit var prenota: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,24 +53,28 @@ class DeatilActivity : AppCompatActivity() {
         db.collection("1").document(idDoc.toString()).get().addOnSuccessListener {
 
             //recupero dati da firebase
-             luogo.text = it["luogo"].toString()
-             numPersone.text = it["numPersone"].toString()
-             data.text= it["data"].toString()
-             ora.text= it["ora"].toString()
-             prezzo.text= it["prezzo"].toString()
-             sport.text= it["sport"].toString()
-            descrizione.text= it["descrizione"].toString()
+            luogo.text = it["luogo"].toString()
+            numPersone.text = it["numPersone"].toString()
+            data.text = it["data"].toString()
+            ora.text = it["ora"].toString()
+            prezzo.text = it["prezzo"].toString()
+            sport.text = it["sport"].toString()
+            descrizione.text = it["descrizione"].toString()
             Glide.with(this).load(it["image"]).into(image)
 
         }
 
-        backButton.setOnClickListener{
+
+
+        backButton.setOnClickListener {
             finish()
         }
 
         prenota.setOnClickListener {
             newDialog()
         }
+
+
     }
 
     private fun returnHome() {
@@ -85,10 +90,13 @@ class DeatilActivity : AppCompatActivity() {
 
         //Richiamiamo la funzione reloadFragment alla pressione del button 'Continua'
         builder1.setPositiveButton(
-            "Continua",
-            DialogInterface.OnClickListener { dialog, id -> returnHome()})
+            "Continue",
+            DialogInterface.OnClickListener { dialog, id -> returnHome() })
 
         val alert11: AlertDialog = builder1.create()
         alert11.show()
     }
 }
+
+
+
