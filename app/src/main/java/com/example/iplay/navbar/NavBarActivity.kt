@@ -18,7 +18,7 @@ class NavBarActivity : AppCompatActivity() {
         //Initialize the bottom navigation view
         //create bottom navigation view object
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
-       // val navController = findNavController(R.id.nav_fragment)
+        // val navController = findNavController(R.id.nav_fragment)
         //bottomNavigationView.setupWithNavController(navController)
 
         loadFragment(HomeFragment())
